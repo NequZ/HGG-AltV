@@ -1,6 +1,3 @@
-#Nur ressource/orp bearbeiten
 
-HGG AltV Server
+#NUR ressources/opr  editen das ist die Main Ressource
 
-Owner: Ravish
-Developer: Isa
