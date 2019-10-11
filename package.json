@@ -1,0 +1,19 @@
+{
+  "name": "altv",
+  "version": "1.0.0",
+  "description": "Remember to 🌟 this Github if you 💖 it.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^7.12.1",
+    "sjcl": "^1.0.8",
+    "typeorm": "^0.2.19"
+  }
+}

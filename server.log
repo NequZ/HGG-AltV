@@ -1,0 +1,10 @@
+[21:24:39] alt:V Server, build #813, branch beta
+[21:24:39] Starting [GER] Highgroundgaming AltV [DevServer] on 0.0.0.0:7788
+[21:24:39] Loading resource orp
+[21:24:40] Loaded resource orp
+[21:24:40] Loading resource postgres-wrapper
+[21:24:43] Loaded resource postgres-wrapper
+[21:24:43] Starting HTTP server on 0.0.0.0:7788
+[21:24:43] Server started
+[21:24:43] Connected to master server
+[21:24:49] Loaded: events->playerEnteredVehicle.mjs	
