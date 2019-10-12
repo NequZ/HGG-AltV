@@ -235,3 +235,10 @@ chat.registerCmd('trackdone', () => {
     fs.writeFileSync(`trackpoints.json`, JSON.stringify(trackPoints, null, '\t'));
     trackPoints = [];
 });
+
+chat.registerCmd('rmveh', (player, args) => {
+    console.log(player)
+    console.log(args)
+
+    //alt.emit("removeEntity", )
+}) 
