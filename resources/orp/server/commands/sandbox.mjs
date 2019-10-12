@@ -26,6 +26,7 @@ const sandboxhelp = [
     '/phonenumber',
     '/t, /call, /addcontact, /removecontact, /hangup',
     '/d20 /flipcoin, /sf'
+    '/rmveh' rmveh
 ];
 
 chat.registerCmd('help', player => {
