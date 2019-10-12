@@ -18,6 +18,12 @@ export function setupVehicleFunctions(vehicle) {
         db.updatePartialData(id, { [fieldName]: fieldValue }, 'Vehicle', () => {});
     };
 
+    vehicle.deleteForEver = () => {
+        vehicle.destroy();
+        //deleteByIds(ids, repoName, callback) 
+        db.deleteByIds(vehicle.data.id, 'Vehicle', () => {});
+    }
+
     vehicle.saveVehicleData = () => {
         vehicle.saveField(vehicle.data.id, 'position', JSON.stringify(vehicle.pos));
         vehicle.saveField(vehicle.data.id, 'rotation', JSON.stringify(vehicle.rot));

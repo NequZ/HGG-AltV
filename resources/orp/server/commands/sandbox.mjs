@@ -237,8 +237,50 @@ chat.registerCmd('trackdone', () => {
 });
 
 chat.registerCmd('rmveh', (player, args) => {
-    console.log(player)
-    console.log(args)
+    if(args.length > 0) { 
+        let veh = player.vehicles;
+        if(args[0] = "all") { 
+            veh.forEach(veh => { 
+                console.log(`${player.username} - remove car ${veh.data.model} with id ${veh.data.model}`) 
+                veh.deleteForEver()   
+            });
+        } else {
+            let vehs = veh.filter(veh => veh.data.model === args[0])
+            let vehsC = ehs.length;
+            if(vehsC > 0) { //any car
+                if(vehsC > 1) { //multply veh 
+                    if(args.length > 1) { //have index
+                        let iVeh = parseInt(arg[1]);
+                        if (!isNaN(iVeh)) { //sec arg is prased
+                            if(iVeh < vehsC ) { //sec arg bound
+                                let veh = vehs[iVeh]
+                                console.log(`${player.username} - remove car ${veh.data.model} with id ${veh.data.id}`) 
+                                veh.deleteForEver()
+                            } else { 
+                                player.send(`Please select a number between 0 and ${vehsC}`)
+                            }
+                        } else { 
+                            player.send(`You are an idit, you have to choos a number from 0 to ${vehsC}`)
+                        }
+                    } else {  //no index
+                        player.send("Please add a index:");
+                        veh.forEach((veh, iVeh) => player.send(`[${iVeh}] ${veh.data.model}`))
+                    }
+                } else { //one car
+                    veh[0].deleteForEver()
+                    console.log(`${player.username} - remove car ${veh.data.model} with id ${veh.data.id}`) 
+                }
+            } else { 
+                player.send(`You dont have car like ${arg[0]}`)
+            }
+        }
+    } else { 
+        player.send('Usage: /rmveh (vehicale name|all) [number]')
+        player.send('or use /listVeh')
+    }
+}); 
 
-    //alt.emit("removeEntity", )
-}) 
+chat.registerCmd("listVeh", (player) => { 
+    let vehList = player.vehicles.map(veh => veh.data.model).join(",")
+    player.send(vehList)
+});
