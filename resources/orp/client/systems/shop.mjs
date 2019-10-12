@@ -23,7 +23,7 @@ const shops = [
             180225
         ],
         func: panelsBarbershop.showDialogue,
-        message: `Press ~INPUT_CONTEXT~ to change your hairstyle.`
+        message: `Drücke ~INPUT_CONTEXT~ um deinen Haarstil zu ändern.`
     },
     {
         type: 'Vehicle Customs Shop',
@@ -40,7 +40,7 @@ const shops = [
         ],
         func: panelsVehicleCustom.showDialogue,
         vehicle: true,
-        message: `Press ~INPUT_CONTEXT~ to edit your vehicle.`
+        message: `Drücke ~INPUT_CONTEXT~ um dein Fahrzeug anzupassen.`
     },
     {
         type: 'Clothing Store',
@@ -63,7 +63,7 @@ const shops = [
             175361
         ],
         func: panelsClothing.showDialogue,
-        message: `Press ~INPUT_CONTEXT~ to shop for clothes.`
+        message: `Drücke ~INPUT_CONTEXT~ um Kleidung zu kaufen.`
     }
 ];
 

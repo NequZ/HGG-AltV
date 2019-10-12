@@ -174,7 +174,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            message: 'loading...',
+            message: 'Laden...',
             hairChanged: false,
             clothingData: [],
             sex: 0,
@@ -389,7 +389,7 @@ class App extends Component {
         return h(
             'div',
             { id: 'app' },
-            h('div', { class: 'tab' }, h('h1', { class: 'title' }, 'Clothing')),
+            h('div', { class: 'tab' }, h('h1', { class: 'title' }, 'Kleidung')),
             h(
                 'div',
                 { class: 'mod-list scroll' },
@@ -402,16 +402,16 @@ class App extends Component {
             h(
                 'div',
                 { class: `basket scroll ${this.state.basket.length ? 'show' : null}` },
-                h('div', { class: 'basket-title' }, h('h1', { class: 'title' }, 'Basket')),
+                h('div', { class: 'basket-title' }, h('h1', { class: 'title' }, 'Warenkorb')),
                 h('hr'),
                 h(ShoppingBasket, {
                     basket: this.state.basket,
                     removeItem: this.removeItem.bind(this)
                 }),
                 h('hr'),
-                h('div', { class: 'basket-purchase', onclick: this.purchase.bind(this) }, 'Purchase')
+                h('div', { class: 'basket-purchase', onclick: this.purchase.bind(this) }, 'Kaufen')
             ),
-            h('div', { class: 'footer', onclick: this.submitChanges.bind(this) }, 'Exit')
+            h('div', { class: 'footer', onclick: this.submitChanges.bind(this) }, 'Verlassen')
         );
         // Render HTML / Components and Shit Here
     }
@@ -471,7 +471,7 @@ const ClothingItem = ({ index, item, setItemValue, basket }) => {
                 h(
                     'button',
                     { class: 'buy', id: `${index}`, onclick: basket.bind(this) },
-                    `Put into basket`
+                    `In den Warenkrob`
                 )
         )
     );

@@ -8,7 +8,7 @@ class App extends Component {
         this.state = {
             register: 0,
             fadeOut: 0,
-            feedback: 'Welcome Home',
+            feedback: 'Willkommen zurueck',
             username: '',
             password1: '',
             password2: '',
@@ -70,7 +70,7 @@ class App extends Component {
 
         if (this.state.username.length <= 5) {
             this.setState({
-                feedback: 'Username must be greater than 5 characters.',
+                feedback: 'Benutzername muss groeßer wie 5 Buchstaben sein.',
                 valid: false
             });
 
@@ -79,14 +79,14 @@ class App extends Component {
 
         if (this.state.password1.length <= 5) {
             this.setState({
-                feedback: 'Password must be greater than 5 characters.',
+                feedback: 'Passwort muss groeßer wie 5 Buchstaben sein.',
                 valid: false
             });
             return;
         }
 
         if (this.state.register === 1 && this.state.password1 !== this.state.password2) {
-            this.setState({ feedback: 'Passwords do not match.', valid: false });
+            this.setState({ feedback: 'Passwörter stimmen nicht überein.', valid: false });
             return;
         }
 
@@ -96,7 +96,7 @@ class App extends Component {
             this.setState({ valid: false });
         }
 
-        this.setState({ feedback: 'Ready to go!' });
+        this.setState({ feedback: 'Bereit' });
     }
 
     setRegister() {
@@ -150,7 +150,7 @@ class App extends Component {
             h(
                 'div',
                 { class: 'container' },
-                h('div', { class: 'center' }, h('div', { class: 'logo' }, 'Open:RP'))
+                h('div', { class: 'center' }, h('div', { class: 'logo' }, 'Highgroundgaming.de'))
             ),
             h(
                 'div',
@@ -176,7 +176,7 @@ class App extends Component {
                             h(
                                 'button',
                                 { onclick: this.setRegister.bind(this) },
-                                'New Account >'
+                                'Neuer Account >'
                             )
                         )
                     ),
@@ -190,7 +190,7 @@ class App extends Component {
                             h(
                                 'button',
                                 { onclick: this.setLogin.bind(this) },
-                                'Existing Account >'
+                                'Bestehender Account  >'
                             )
                         )
                     ),
@@ -207,7 +207,7 @@ class App extends Component {
                         h('p', {}, 'Login'),
                         h('input', {
                             type: 'text',
-                            name: 'username',
+                            name: 'Benutzername',
                             placeholder: 'username',
                             autocomplete: 'off',
                             oninput: this.validData.bind(this),
@@ -229,7 +229,7 @@ class App extends Component {
                         h('p', {}, 'Pass'),
                         h('input', {
                             type: 'password',
-                            name: 'password',
+                            name: 'Passwort',
                             placeholder: 'password',
                             oninput: this.validData.bind(this),
                             onkeypress: this.handleKeyPress.bind(this),
@@ -257,7 +257,7 @@ class App extends Component {
                               h('p', {}, ''),
                               h('input', {
                                   type: 'password',
-                                  name: 'password',
+                                  name: 'Passwort',
                                   placeholder: 'password confirmation',
                                   oninput: this.validData.bind(this),
                                   id: 'password2',
@@ -291,7 +291,7 @@ class App extends Component {
                                     disabled: !this.state.valid,
                                     class: this.state.valid ? 'green' : 'red'
                                 },
-                                'Submit'
+                                'Bestaetigen'
                             )
                         )
                     )
@@ -300,7 +300,7 @@ class App extends Component {
             h(
                 'div',
                 { class: 'footer' },
-                'https://www.twitch.tv/stuykgaming | https://github.com/team-stuyk-alt-v'
+                ''
             )
         );
 

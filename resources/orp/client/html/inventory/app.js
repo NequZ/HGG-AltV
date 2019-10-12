@@ -158,9 +158,9 @@ class App extends Component {
                 // Inventory
                 this.state.tabIndex == 2 && h(Inventory),
                 // Idk Yet
-                this.state.tabIndex == 3 && h('div', {}, 'idk'),
+                this.state.tabIndex == 3 && h('div', {}, 'W.I.P.'),
                 // Settings
-                this.state.tabIndex == 4 && h('div', {}, 'settings')
+                this.state.tabIndex == 4 && h('div', {}, 'Einstellungen')
             )
         );
     }

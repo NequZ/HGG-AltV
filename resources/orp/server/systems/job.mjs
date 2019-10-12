@@ -506,7 +506,7 @@ export class Objective {
     checkIfVehicleDamaged(player, vehicle) {
         if (isFlagged(this.flags, modifiers.NO_DAMAGE_VEHICLE)) {
             if (vehicle.engineHealth < player.job.vehicleHealth) {
-                player.send(`You failed to keep your vehicle in good health.`);
+                player.send(`Du hast es nicht gechafft dein Autoschaden gering zu halten.`);
                 quitJob(player, false, true);
                 return false;
             }
