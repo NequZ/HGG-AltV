@@ -49,11 +49,11 @@ chat.registerCmd('addwep', (player, arg) => {
     }
 
     if (!addWeapon(player, arg[0])) {
-        player.send('Weapon does not exist');
+        player.send('Diese Waffe existiert nicht');
         return;
     }
 
-    player.send(`Weapon was added to your inventory.`);
+    player.send(`Die Waffe wurde deinem Inventar hinzugefügt.`);
 });
 
 chat.registerCmd('face', player => {
@@ -68,7 +68,7 @@ chat.registerCmd('additem', (player, arg) => {
 
     let itemTemplate = configurationItems.Items[`${arg[0]}`];
     if (!itemTemplate) {
-        player.send('Item does not exist');
+        player.send('Das Item existiert nicht');
         return;
     }
 

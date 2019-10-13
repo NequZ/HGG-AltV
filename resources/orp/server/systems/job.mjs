@@ -365,7 +365,7 @@ export class Objective {
             if (!allValid) return;
             if (!player.hasQuantityOfItem(item.key, item.quantity)) {
                 allValid = false;
-                player.send(`Missing ${item.quantity}x of ${item.key}`);
+                player.send(`Es fehlen ${item.quantity}x von ${item.key}`);
                 return;
             }
         });
@@ -431,11 +431,12 @@ export class Objective {
         const baseItem = BaseItems[Items[reward.prop].base];
         if (baseItem.abilities.stack) {
             player.addItem(Items[reward.prop].key, reward.quantity);
-            player.send(`${Items[reward.prop].name} was added to your inventory.`);
-        } else {
+            player.send(`${Items[reward.prop].name} wurde deinem Inventar hinzugefügt.`);
+        } 
+        else {
             for (let i = 0; i < reward.quantity; i++) {
                 player.addItem(Items[reward.prop].key, 1);
-                player.send(`${Items[reward.prop].name} was added to your inventory.`);
+                player.send(`${Items[reward.prop].name} wurde deinem Inventar hinzugefügt.`);
             }
         }
     }
@@ -672,7 +673,7 @@ export class Job {
         }
 
         if (this.enabledTimer) {
-            player.send('Clock is ticking.. Go Go Go!');
+            player.send('Zeit läuft');
         }
     }
 
@@ -690,7 +691,7 @@ export class Job {
         if (!Items[this.uniform]) return;
         if (player.hasItem(Items[this.uniform].key)) return;
         player.addItem(Items[this.uniform].key, 1, Items[this.uniform].props);
-        player.send(`${Items[this.uniform].name} was added to your inventory.`);
+        player.send(`${Items[this.uniform].name} wurde deinem Inventar hinzugefügt.`);
     }
 
     checkItemRestrictions(player) {
@@ -727,7 +728,7 @@ export class Job {
                 valid = false;
                 quitJob(player, false, true);
                 player.send(
-                    `You do not have a high enough ${restriction.skill} for this job.`
+                    `Du hast nicht genug ${restriction.skill} für diesen Job.`
                 );
                 return;
             }
@@ -833,7 +834,7 @@ export class Job {
         if (this.enabledTimer) {
             let end = Date.now();
             let elapsed_time = parseFloat((end - this.start) / 1000).toFixed(1);
-            player.send(`Elapsed Time: ${elapsed_time} seconds`);
+            player.send(`Verbleibende Zeit: ${elapsed_time} Sekunden`);
         }
         quitJob(player);
     }
@@ -929,7 +930,7 @@ export function checkRestrictions(player) {
     if (player.job.restrictions <= 0) return;
     if (isFlagged(player.job.restrictions, restrictions.NO_VEHICLES)) {
         if (player.vehicle) {
-            player.send('Failed; no vehicles allowed.');
+            player.send('Fehlgeschlagen: Es sind keine Autos erlaubt.');
             quitJob(player, false, true);
             return;
         }
@@ -937,7 +938,7 @@ export function checkRestrictions(player) {
 
     if (isFlagged(player.job.restrictions, restrictions.TIME_LIMIT)) {
         if (Date.now() > this.end) {
-            player.send('You have exhausted your time limit.');
+            player.send('Du hast das Zeitlimit überschritten.');
             quitJob(player, false, true);
             return;
         }
@@ -946,7 +947,7 @@ export function checkRestrictions(player) {
     // Dieing Restriction
     if (isFlagged(player.job.restrictions, restrictions.NO_DIEING)) {
         if (player.hasDied) {
-            player.send('This job does not allow dieing; you have failed.');
+            player.send('Der Job erlaubt es nicht, bewusstlos zu werden.');
             quitJob(player, false, true);
             return;
         }
@@ -955,7 +956,7 @@ export function checkRestrictions(player) {
     // Weapon Restriction
     if (isFlagged(player.job.restrictions, restrictions.NO_WEAPONS)) {
         if (player.equipment[11] && player.equipment[11].base === 'weapon') {
-            player.send('This job does not allow weapons.');
+            player.send('Der Job erlaubt es nicht, Waffen zu besitzen.');
             quitJob(player, false, true);
             return;
         }
@@ -980,7 +981,7 @@ export function quitTarget(player) {
     const employee = player.jobber.employee;
     const fare = player.jobber.fare;
     const isObjectiveFare = player.jobber.objectiveFare;
-    player.send('You have cancelled your request.');
+    player.send('Du hast deine Anfrage abgelehnt.');
 
     // Employee doesn't exist; don't pay.
     if (!employee) {
@@ -999,13 +1000,13 @@ export function quitTarget(player) {
         if (employee) {
             if (employee.job) {
                 employee.job.skipToBeginning(employee);
-                employee.send('{FF0000}Your customer has left.');
+                employee.send('{FF0000}Dein Kunde hat sich schlafen gelegt.');
             }
         }
     } else {
         if (employee) {
             if (employee.job) {
-                employee.send('{FF0000}Your customer has cancelled the request.');
+                employee.send('{FF0000}Dein Kunde hat die Anfrage abgelehnt.');
                 employee.job.skipToBeginning(employee);
             }
         }
@@ -1034,7 +1035,7 @@ export function quitJob(player, loggingOut = false, playFailSound = false) {
     if (player.job) {
         if (player.job.target && player.job.target.entity.constructor.name === 'Player') {
             player.job.target.entity.jobber = undefined;
-            player.job.target.entity.send('The employee quit their job.');
+            player.job.target.entity.send('Der Arbeiter hat gekündigt.');
         }
     }
 
