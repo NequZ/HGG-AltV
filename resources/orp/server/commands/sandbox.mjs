@@ -241,18 +241,18 @@ chat.registerCmd('trackdone', () => {
 chat.registerCmd('rmveh', (player, args) => {
     if(args.length > 0) { 
         let veh = player.vehicles;
-        if(args[0] = "all") { 
+        if(args[0] === "all") { 
             veh.forEach(veh => { 
-                console.log(`${player.username} - remove car ${veh.data.model} with id ${veh.data.model}`) 
+                console.log(`${player.username} - remove car ${veh.data.model} with id ${veh.data.id}`) 
                 veh.deleteForEver()   
             });
         } else {
-            let vehs = veh.filter(veh => veh.data.model === args[0])
-            let vehsC = ehs.length;
+            let vehs = veh.filter(veh => veh.data.model.toLowerCase() === args[0].toLowerCase());
+            let vehsC = vehs.length;
             if(vehsC > 0) { //any car
                 if(vehsC > 1) { //multply veh 
                     if(args.length > 1) { //have index
-                        let iVeh = parseInt(arg[1]);
+                        let iVeh = parseInt(args[1]);
                         if (!isNaN(iVeh)) { //sec arg is prased
                             if(iVeh < vehsC ) { //sec arg bound
                                 let veh = vehs[iVeh]
@@ -266,23 +266,23 @@ chat.registerCmd('rmveh', (player, args) => {
                         }
                     } else {  //no index
                         player.send("Please add a index:");
-                        veh.forEach((veh, iVeh) => player.send(`[${iVeh}] ${veh.data.model}`))
+                        vehs.forEach((veh, iVeh) => player.send(`[${iVeh}] ${veh.data.model}`))
                     }
                 } else { //one car
                     veh[0].deleteForEver()
                     console.log(`${player.username} - remove car ${veh.data.model} with id ${veh.data.id}`) 
                 }
             } else { 
-                player.send(`You dont have car like ${arg[0]}`)
+                player.send(`You dont have car like ${args[0]}`)
             }
         }
     } else { 
         player.send('Usage: /rmveh (vehicale name|all) [number]')
-        player.send('or use /listVeh')
+        player.send('or use /listveh')
     }
 }); 
 
-chat.registerCmd("listVeh", (player) => { 
+chat.registerCmd("listveh", (player) => { 
     let vehList = player.vehicles.map(veh => veh.data.model).join(",")
-    player.send(vehList)
+    player.send(`${vehList}`)
 });

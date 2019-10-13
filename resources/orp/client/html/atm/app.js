@@ -159,7 +159,7 @@ class App extends Component {
                         { class: 'center' },
                         h('button', { onclick: this.withdraw.bind(this) }, 'Abheben'),
                         h('button', { onclick: this.deposit.bind(this) }, 'Einzahlen')
-                    )
+                    )   
                 )
             )
         );
