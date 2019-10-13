@@ -160,7 +160,7 @@ const clothing = {
         isProp: true
     },
     BraceletTexture: {
-        label: 'Armbandfarbe',
+        label: 'Armband',
         value: 0,
         min: 0,
         max: 1,
@@ -337,7 +337,7 @@ class App extends Component {
 
         // Play ticky noises :)
         var audio = new Audio('../sound/sounds/tick.ogg');
-        audio.volume = 0.50;
+        audio.volume = 0.35;
         audio.play();
 
         if (increment) {

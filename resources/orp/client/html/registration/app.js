@@ -86,7 +86,7 @@ class App extends Component {
         }
 
         if (this.state.register === 1 && this.state.password1 !== this.state.password2) {
-            this.setState({ feedback: 'Passwörter stimmen nicht überein.', valid: false });
+            this.setState({ feedback: 'Passwoerter stimmen nicht überein.', valid: false });
             return;
         }
 

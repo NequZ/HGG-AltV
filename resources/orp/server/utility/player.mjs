@@ -596,7 +596,7 @@ export function setupPlayerFunctions(player) {
             if (equippedItem.base === 'fishingrod') {
                 if (player.job) {
                     quitJob(player, false, true);
-                    player.send('You have quit fishing.');
+                    player.send('Du hast mit dem Angeln aufgehört.');
                 }
             }
 

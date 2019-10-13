@@ -166,7 +166,7 @@ class App extends Component {
         return h(
             'div',
             { id: 'app' },
-            h('div', { class: 'tab' }, h('h1', { class: 'title' }, 'Customize Vehicle')),
+            h('div', { class: 'tab' }, h('h1', { class: 'title' }, 'Fahrzeug anpassen')),
             h(
                 'div',
                 { class: 'mod-list scroll' },
@@ -184,12 +184,12 @@ class App extends Component {
                 h(
                     'button',
                     { class: 'footer-button', onclick: this.exit.bind(this) },
-                    'Exit'
+                    'Verlassen'
                 ),
                 h(
                     'button',
                     { class: 'footer-button', onclick: this.saveVehicle.bind(this) },
-                    'Purchase'
+                    'Kaufen'
                 )
             ),
             this.state.colorPopout &&
@@ -302,11 +302,11 @@ const ColorSelect = ({ title, showColorPopup, isPrimary, paintType }) => {
                 { oninput: showPopup.bind(this), value: `${paintType}` },
                 h('option', { value: '0' }, 'Normal'),
                 h('option', { value: '1' }, 'Metallic'),
-                h('option', { value: '2' }, 'Pearl'),
-                h('option', { value: '3' }, 'Matte'),
+                h('option', { value: '2' }, 'Perl'),
+                h('option', { value: '3' }, 'Matt'),
                 h('option', { value: '4' }, 'Metal'),
                 h('option', { value: '5' }, 'Chrome'),
-                h('option', { value: '6', disabled: true }, 'Change Type')
+                h('option', { value: '6', disabled: true }, 'Typ wechseln')
             )
         )
     );
