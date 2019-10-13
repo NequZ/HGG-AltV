@@ -18,6 +18,7 @@ import * as systemsVehicles from '/client/systems/vehicles.mjs';
 // Panels
 import * as panelsChat from '/client/panels/chat.mjs';
 import * as panelsAtm from '/client/panels/atm.mjs';
+import * as panelMobile from '/client/panels/handy.mjs';
 import * as panelsInfo from '/client/panels/info.mjs';
 import * as panelsInventory from '/client/panels/inventory.mjs';
 import * as panelsClothing from '/client/panels/clothing.mjs';
@@ -91,6 +92,9 @@ alt.onServer('atm:ShowDialogue', panelsAtm.showDialogue);
 alt.onServer('atm:UpdateCash', panelsAtm.updateCash);
 alt.onServer('atm:UpdateBank', panelsAtm.updateBank);
 alt.onServer('atm:ShowSuccess', panelsAtm.showSuccess);
+// =======================================================
+// Mobile Events
+alt.onServer('mob:ShowDialogue', panelMobile.showDialogue);
 
 // =======================================================
 // Clothing Events
