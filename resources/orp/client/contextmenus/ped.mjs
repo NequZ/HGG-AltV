@@ -53,6 +53,12 @@ function arrestAddons(player) {
             isServer: true,
             event: 'use:CuffPlayer'
         });
+
+        options.push({
+            label: 'Free Cuff',
+            isServer: true,
+            event: 'use:CuffPlayerFreely'
+        });
     }
 
     // Are uncuffable by person who cuffed them.
