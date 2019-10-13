@@ -1,10 +1,62 @@
-[21:24:39] alt:V Server, build #813, branch beta
-[21:24:39] Starting [GER] Highgroundgaming AltV [DevServer] on 0.0.0.0:7788
-[21:24:39] Loading resource orp
-[21:24:40] Loaded resource orp
-[21:24:40] Loading resource postgres-wrapper
-[21:24:43] Loaded resource postgres-wrapper
-[21:24:43] Starting HTTP server on 0.0.0.0:7788
-[21:24:43] Server started
-[21:24:43] Connected to master server
-[21:24:49] Loaded: events->playerEnteredVehicle.mjs	
+[20:04:52] alt:V Server, build #814, branch beta
+[20:04:53] Starting [GER] Highgroundgaming AltV [DevServer] on 0.0.0.0:7788
+[20:04:53] Loading resource orp
+[20:04:53] Loaded resource orp
+[20:04:53] Loading resource postgres-wrapper
+[20:04:56] Loaded resource postgres-wrapper
+[20:04:56] Loading resource speedo
+[20:05:00] Loaded resource speedo
+[20:05:00] Starting HTTP server on 0.0.0.0:7788
+[20:05:00] Server started
+[20:05:00] Connected to master server
+[20:05:03] Loaded: events->playerEnteredVehicle.mjs	
+[20:06:47] Ravish has connected.	
+[20:06:52] Ravish is attempting a login with Ravish.	
+[20:06:52] Ravish has logged in.	
+[20:06:53] Brian Anderson has spawned.	
+[20:07:09] [CMD] Ravish: /addveh jugular	
+[20:11:34] [CMD] Ravish: /revive	
+[20:12:19] SuZ has connected.	
+[20:12:50] SuZ is attempting a login with TrunksLaw.	
+[20:12:50] SuZ has logged in.	
+[20:12:58] Trunks_Law has spawned.	
+[20:13:03] [CMD] SuZ: /reivve	
+[20:13:04] [CMD] SuZ: /revive	
+[20:15:59] [CMD] Ravish: /addveh lynx	
+[20:21:58] [CMD] SuZ: /rmveh all	
+[20:22:06] [CMD] SuZ: /revive	
+[20:23:09] [CMD] SuZ: /addveh t20	
+[20:23:36] [CMD] SuZ: /rmveh all	
+[20:23:36][Error] [V8] Exception at orp:file:///C:/Users/Administrator/Desktop/HGGAltV/HGG-AltV/resources/orp/server/utility/vehicle.mjs:22
+[20:23:36][Error]           vehicle.destroy();
+[20:23:36][Error]   Error: entity is invalid
+    at Vehicle.vehicle.deleteForEver (file:///C:/Users/Administrator/Desktop/HGGAltV/HGG-AltV/resources/orp/server/utility/vehicle.mjs:22:17)
+    at file:///C:/Users/Administrator/Desktop/HGGAltV/HGG-AltV/resources/orp/server/commands/sandbox.mjs:247:21
+    at Array.forEach (<anonymous>)
+    at file:///C:/Users/Administrator/Desktop/HGGAltV/HGG-AltV/resources/orp/server/commands/sandbox.mjs:245:17
+    at routeMessage (file:///C:/Users/Administrator/Desktop/HGGAltV/HGG-AltV/resources/orp/server/chat/chat.mjs:32:17)
+[20:23:47] [CMD] SuZ: /rmveh all	
+[20:23:47][Error] [V8] Exception at orp:file:///C:/Users/Administrator/Desktop/HGGAltV/HGG-AltV/resources/orp/server/utility/vehicle.mjs:22
+[20:23:47][Error]           vehicle.destroy();
+[20:23:47][Error]   Error: entity is invalid
+    at Vehicle.vehicle.deleteForEver (file:///C:/Users/Administrator/Desktop/HGGAltV/HGG-AltV/resources/orp/server/utility/vehicle.mjs:22:17)
+    at file:///C:/Users/Administrator/Desktop/HGGAltV/HGG-AltV/resources/orp/server/commands/sandbox.mjs:247:21
+    at Array.forEach (<anonymous>)
+    at file:///C:/Users/Administrator/Desktop/HGGAltV/HGG-AltV/resources/orp/server/commands/sandbox.mjs:245:17
+    at routeMessage (file:///C:/Users/Administrator/Desktop/HGGAltV/HGG-AltV/resources/orp/server/chat/chat.mjs:32:17)
+[20:23:55] [CMD] SuZ: /addveh nero	
+[20:27:56] [CMD] Ravish: /tpwp	
+[20:28:14] [CMD] Ravish: /addveh osiris	
+[20:28:33] [CMD] Ravish: /addveh osiris	
+[20:41:50] [CMD] SuZ: /rmveh all	
+[20:41:50][Error] [V8] Exception at orp:file:///C:/Users/Administrator/Desktop/HGGAltV/HGG-AltV/resources/orp/server/utility/vehicle.mjs:22
+[20:41:50][Error]           vehicle.destroy();
+[20:41:50][Error]   Error: entity is invalid
+    at Vehicle.vehicle.deleteForEver (file:///C:/Users/Administrator/Desktop/HGGAltV/HGG-AltV/resources/orp/server/utility/vehicle.mjs:22:17)
+    at file:///C:/Users/Administrator/Desktop/HGGAltV/HGG-AltV/resources/orp/server/commands/sandbox.mjs:247:21
+    at Array.forEach (<anonymous>)
+    at file:///C:/Users/Administrator/Desktop/HGGAltV/HGG-AltV/resources/orp/server/commands/sandbox.mjs:245:17
+    at routeMessage (file:///C:/Users/Administrator/Desktop/HGGAltV/HGG-AltV/resources/orp/server/chat/chat.mjs:32:17)
+[20:42:07] TrunksLaw has disconnected.	
+[20:42:35] [CMD] Ravish: /players	
+[20:56:03] Ravish has disconnected.	

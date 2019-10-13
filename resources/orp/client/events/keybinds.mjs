@@ -3,6 +3,7 @@ import * as native from 'natives';
 import * as panelsInventory from '/client/panels/inventory.mjs';
 import * as panelsChat from '/client/panels/chat.mjs';
 import * as panelsHelp from '/client/panels/help.mjs';
+import * as panelMobile from '/client/panels/handy.mjs';
 import * as systemsVehicles from '/client/systems/vehicles.mjs';
 import * as systemsContext from '/client/systems/context.mjs';
 import * as utilityGameInfo from '/client/utility/gameinfo.mjs';
@@ -71,6 +72,12 @@ let keybinds = {
         altModifier: false,
         shiftModifier: false,
         onKeyUp: panelsHelp.toggleHelp
+    },
+    // N - Mobile
+    78: { 
+        altModifier: false,
+        shiftModifier: false,
+        onKeyUp: panelMobile.showDialogue
     }
 };
 

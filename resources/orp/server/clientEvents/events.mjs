@@ -50,6 +50,7 @@ alt.onClient('interaction:Exec', systemsInteraction.attemptToExecuteInteraction)
 alt.onClient('atm:Withdraw', systemsAtm.withdraw);
 alt.onClient('atm:Deposit', systemsAtm.deposit);
 alt.onClient('atm:Ready', systemsAtm.ready);
+// Mob Handler 
 
 // Clothing Handler
 alt.onClient('clothing:Purchase', characterClothing.purchase);

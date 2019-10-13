@@ -352,7 +352,11 @@ export function setupPlayerFunctions(player) {
     player.showAtmSuccess = msg => {
         alt.emitClient(player, 'atm:ShowSuccess', msg);
     };
-
+    // ====================================
+    // Show the Mobile Panel / Dialogue
+    player.showMobilePanel = () => {
+        alt.emitClient(player, 'mob:ShowDialogue');
+    };
     // =================================
     /**
      * Show the Clothing Dialogue
