@@ -539,22 +539,22 @@ class Inventory extends Component {
             h(
                 'button',
                 { class: 'contextOption', onclick: this.useItem.bind(this) },
-                'Use'
+                'Benutzen'
             ),
             h(
                 'button',
                 { class: 'contextOption', onclick: this.dropItem.bind(this) },
-                'Drop'
+                'Wegwerfen'
             ),
             h(
                 'button',
                 { class: 'contextOption', onclick: this.destroyItem.bind(this) },
-                'Destroy'
+                'Zerstören'
             ),
             h(
                 'button',
                 { class: 'contextOption', onclick: this.renameItem.bind(this) },
-                'Rename'
+                'Umbenennen'
             )
         );
     }
@@ -882,7 +882,7 @@ class Profile extends Component {
             h(
                 'button',
                 { class: 'contextOption', onclick: this.unequipItem.bind(this) },
-                'Unequip'
+                'Ablegen'
             )
         );
     }

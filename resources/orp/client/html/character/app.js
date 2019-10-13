@@ -117,7 +117,7 @@ const hairOverlaysFemale = {
 
 const facialFeatures = {
     Sex: {
-        label: 'Sex',
+        label: 'Geschlecht',
         value: 0,
         min: 0,
         max: 1,
@@ -125,7 +125,7 @@ const facialFeatures = {
         func: updateSex
     }, // 0
     FatherFace: {
-        label: 'Father Face',
+        label: 'Vatergesichtsanteil',
         value: 0,
         min: 0,
         max: 45,
@@ -134,7 +134,7 @@ const facialFeatures = {
         group: faceGroups['Face']
     }, // 1
     FatherSkin: {
-        label: 'Father Skin',
+        label: 'Vateranteil',
         value: 0,
         min: 0,
         max: 45,
@@ -143,7 +143,7 @@ const facialFeatures = {
         group: faceGroups['Face']
     }, // 2
     MotherFace: {
-        label: 'Mother Face',
+        label: 'Muttergesichtsanteil',
         value: 0,
         min: 0,
         max: 45,
@@ -152,7 +152,7 @@ const facialFeatures = {
         group: faceGroups['Face']
     }, // 3
     MotherSkin: {
-        label: 'Mother Skin',
+        label: 'Mutteranteil',
         value: 0,
         min: 0,
         max: 45,
@@ -161,7 +161,7 @@ const facialFeatures = {
         group: faceGroups['Face']
     },
     FaceMix: {
-        label: 'Face Mix',
+        label: 'Gesichtsmix',
         value: 0,
         min: 0,
         max: 1,
@@ -170,7 +170,7 @@ const facialFeatures = {
         group: faceGroups['Face']
     }, // 7
     SkinMix: {
-        label: 'Skin Mix',
+        label: 'Hautmix',
         value: 0,
         min: 0,
         max: 1,
@@ -179,7 +179,7 @@ const facialFeatures = {
         group: faceGroups['Face']
     },
     Hair: {
-        label: 'Hair',
+        label: 'Haare',
         value: 0,
         min: 0,
         max: 78,
@@ -191,7 +191,7 @@ const facialFeatures = {
         maleBlacklist: [23]
     }, // 10
     HairColor: {
-        label: 'Hair Color',
+        label: 'Haar Farbe',
         value: 0,
         min: 0,
         max: 78,
@@ -201,7 +201,7 @@ const facialFeatures = {
         group: faceGroups['Hair']
     }, // 11
     HairHighlights: {
-        label: 'Hair Highlights',
+        label: 'Haar Highlights',
         value: 0,
         min: 0,
         max: 78,
@@ -211,7 +211,7 @@ const facialFeatures = {
         group: faceGroups['Hair']
     }, // 12
     HairTexture: {
-        label: 'Hair Texture',
+        label: 'Haar Textur',
         value: 0,
         min: 0,
         max: 0,
@@ -221,7 +221,7 @@ const facialFeatures = {
         group: faceGroups['Hair']
     }, // 13
     EyesColor: {
-        label: 'Eyes Color',
+        label: 'Augen Farbe',
         value: 0,
         min: 0,
         max: 32,
@@ -230,7 +230,7 @@ const facialFeatures = {
         increment: 1
     }, // 14
     NoseWidth: {
-        label: 'Nose Width',
+        label: 'Nasenbreite',
         value: 0,
         min: -1,
         max: 1,
@@ -240,7 +240,7 @@ const facialFeatures = {
         isFaceFeature: true
     }, // 15
     NoseHeight: {
-        label: 'Nose Height',
+        label: 'Nasenhöhe',
         value: 0,
         min: -1,
         max: 1,
@@ -250,7 +250,7 @@ const facialFeatures = {
         isFaceFeature: true
     }, // 16
     NoseLength: {
-        label: 'Nose Length',
+        label: 'Nasenlänge',
         value: 0,
         min: -1,
         max: 1,
@@ -260,7 +260,7 @@ const facialFeatures = {
         isFaceFeature: true
     }, // 17
     NoseBridge: {
-        label: 'Nose Bridge',
+        label: 'Nasenbrücke',
         value: 0,
         min: -1,
         max: 1,
@@ -270,7 +270,7 @@ const facialFeatures = {
         isFaceFeature: true
     }, // 18
     NoseTip: {
-        label: 'Nose Tip',
+        label: 'Nasenspitze',
         value: 0,
         min: -1,
         max: 1,
@@ -290,7 +290,7 @@ const facialFeatures = {
         isFaceFeature: true
     }, //20
     BrowHeight: {
-        label: 'Brow Height',
+        label: 'Augenbrauhenhöhe',
         value: 0,
         min: -1,
         max: 1,
@@ -300,7 +300,7 @@ const facialFeatures = {
         isFaceFeature: true
     }, // 21
     BrowWidth: {
-        label: 'Brow Width',
+        label: 'Augenbrauhenbreite',
         value: 0,
         min: -1,
         max: 1,
@@ -350,7 +350,7 @@ const facialFeatures = {
         isFaceFeature: true
     }, // 26
     Lips: {
-        label: 'Lips',
+        label: 'Lippen',
         value: 0,
         min: -1,
         max: 1,
@@ -380,7 +380,7 @@ const facialFeatures = {
         isFaceFeature: true
     }, // 29
     ChinLength: {
-        label: 'Chin Length',
+        label: 'Kinnlänge',
         value: 0,
         min: -1,
         max: 1,
@@ -390,7 +390,7 @@ const facialFeatures = {
         isFaceFeature: true
     }, // 30
     ChinPosition: {
-        label: 'Chin Position',
+        label: 'Kinnposition',
         value: 0,
         min: -1,
         max: 1,
@@ -400,7 +400,7 @@ const facialFeatures = {
         isFaceFeature: true
     }, // 31
     ChinWidth: {
-        label: 'Chin Width',
+        label: 'Kinnbreite',
         value: 0,
         min: -1,
         max: 1,
@@ -452,7 +452,7 @@ const facialFeatures = {
         group: faceGroups['Blemishes']
     },
     FacialHair: {
-        label: 'Facial Hair',
+        label: 'Bart',
         value: 0,
         min: 0,
         max: 28,
@@ -464,7 +464,7 @@ const facialFeatures = {
         group: faceGroups['FacialHair']
     }, // 37, 2
     FacialHairOpacity: {
-        label: 'Facial Hair Opacity',
+        label: 'Bartmenge',
         value: 0,
         min: 0,
         max: 1,
@@ -476,7 +476,7 @@ const facialFeatures = {
         group: faceGroups['FacialHair']
     },
     FacialHairColor: {
-        label: 'Facial Hair Color',
+        label: 'Bartfarbe',
         value: 0,
         min: 0,
         max: 1,
@@ -488,7 +488,7 @@ const facialFeatures = {
         group: faceGroups['FacialHair']
     },
     FacialHairColor2: {
-        label: 'Facial Hair Color 2',
+        label: 'Bartfarbe 2',
         value: 0,
         min: 0,
         max: 1,
@@ -500,7 +500,7 @@ const facialFeatures = {
         group: faceGroups['FacialHair']
     },
     Eyebrows: {
-        label: 'Eyebrows',
+        label: 'Augenbrauen',
         value: 0,
         min: 0,
         max: 33,
@@ -778,7 +778,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            message: 'loading...',
+            message: 'Lade...',
             hairChanged: false,
             faceData: []
         };
@@ -796,7 +796,7 @@ class App extends Component {
             alt.on('sexUpdated', this.sexUpdated.bind(this));
         }
 
-        this.setState({ message: 'Done! ' });
+        this.setState({ message: 'Fertig! ' });
     }
 
     sexUpdated(id) {
@@ -946,7 +946,7 @@ class App extends Component {
             h(
                 'div',
                 { class: 'tab' },
-                h('h1', { class: 'title' }, 'Player Customization')
+                h('h1', { class: 'title' }, 'Spielerbearbeitung')
             ),
             h(
                 'div',
@@ -1026,7 +1026,7 @@ const FaceItem = ({ index, item, setItemValue }) => {
 };
 
 const SubmitButton = ({ submitChanges }) => {
-    return h('div', { class: 'footer', onclick: submitChanges.bind(this) }, 'Submit');
+    return h('div', { class: 'footer', onclick: submitChanges.bind(this) }, 'Bestätigen');
 };
 
 // Render the above component

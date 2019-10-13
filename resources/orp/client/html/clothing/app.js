@@ -4,70 +4,70 @@ const h = createElement;
 /* eslint-disable no-undef */
 const clothing = {
     Shirt: {
-        label: 'Shirt',
+        label: 'T-Shirt',
         value: 0,
         min: 0,
         max: 1,
         id: 11
     },
     ShirtTexture: {
-        label: 'Shirt Texture',
+        label: 'T-Shirt Textur',
         value: 0,
         min: 0,
         max: 1,
         id: 11
     },
     Undershirt: {
-        label: 'Undershirt',
+        label: 'Untershirt',
         value: 0,
         min: 0,
         max: 1,
         id: 8
     },
     UndershirtTexture: {
-        label: 'Undershirt Texture',
+        label: 'Untershirt Textur',
         value: 0,
         min: 0,
         max: 1,
         id: 8
     },
     Arms: {
-        label: 'Arms',
+        label: 'Arme',
         value: 0,
         min: 0,
         max: 1,
         id: 3
     },
     ArmsTexture: {
-        label: 'Arms Texture',
+        label: 'Armfarbe',
         value: 0,
         min: 0,
         max: 1,
         id: 3
     },
     Pants: {
-        label: 'Pants',
+        label: 'Hosen',
         value: 0,
         min: 0,
         max: 1,
         id: 4
     },
     PantsTexture: {
-        label: 'Pants Texture',
+        label: 'Hosen Textur',
         value: 0,
         min: 0,
         max: 1,
         id: 4
     },
     Shoes: {
-        label: 'Shoes',
+        label: 'Schuhe',
         value: 0,
         min: 0,
         max: 1,
         id: 6
     },
     ShoesTexture: {
-        label: 'Shoes Texture',
+        label: 'Schuhefarbe',
         value: 0,
         min: 0,
         max: 1,
@@ -81,14 +81,14 @@ const clothing = {
         id: 7
     },
     AccessoriesTexture: {
-        label: 'Accessories Texture',
+        label: 'Accessories Farbe',
         value: 0,
         min: 0,
         max: 1,
         id: 7
     },
     Hat: {
-        label: 'Hat',
+        label: 'Hüte',
         value: -1,
         min: -1,
         max: 1,
@@ -96,7 +96,7 @@ const clothing = {
         isProp: true
     },
     HatTexture: {
-        label: 'Hat Texture',
+        label: 'Hutfarbe',
         value: 0,
         min: 0,
         max: 1,
@@ -104,7 +104,7 @@ const clothing = {
         isProp: true
     },
     Glasses: {
-        label: 'Glasses',
+        label: 'Brillen',
         value: -1,
         min: -1,
         max: 1,
@@ -112,7 +112,7 @@ const clothing = {
         isProp: true
     },
     GlassesTexture: {
-        label: 'Glasses Texture',
+        label: 'Brillen Textur',
         value: 0,
         min: 0,
         max: 1,
@@ -120,7 +120,7 @@ const clothing = {
         isProp: true
     },
     Earpiece: {
-        label: 'Earpiece',
+        label: 'Ohrenzubehör',
         value: -1,
         min: -1,
         max: 1,
@@ -128,7 +128,7 @@ const clothing = {
         isProp: true
     },
     EarpieceTexture: {
-        label: 'Earpiece Texture',
+        label: 'Ohrenzubehör Textur',
         value: 0,
         min: 0,
         max: 1,
@@ -136,7 +136,7 @@ const clothing = {
         isProp: true
     },
     Watches: {
-        label: 'Watches',
+        label: 'Uhren',
         value: -1,
         min: -1,
         max: 1,
@@ -144,7 +144,7 @@ const clothing = {
         isProp: true
     },
     WatchesTexture: {
-        label: 'Watches Texture',
+        label: 'Uhrenfarbe',
         value: 0,
         min: 0,
         max: 1,
@@ -152,7 +152,7 @@ const clothing = {
         isProp: true
     },
     Bracelet: {
-        label: 'Bracelet',
+        label: 'Armband',
         value: -1,
         min: -1,
         max: 1,
@@ -160,7 +160,7 @@ const clothing = {
         isProp: true
     },
     BraceletTexture: {
-        label: 'Bracelet Texture',
+        label: 'Armbandfarbe',
         value: 0,
         min: 0,
         max: 1,
@@ -337,7 +337,7 @@ class App extends Component {
 
         // Play ticky noises :)
         var audio = new Audio('../sound/sounds/tick.ogg');
-        audio.volume = 0.35;
+        audio.volume = 0.50;
         audio.play();
 
         if (increment) {

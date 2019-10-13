@@ -207,7 +207,7 @@ function sodaMachine(ent) {
             label: 'Soda Machine'
         },
         {
-            label: 'Buy Soda',
+            label: 'Soda kaufen',
             isServer: true,
             event: 'use:SodaMachine'
         }
@@ -217,10 +217,10 @@ function sodaMachine(ent) {
 function payPhone(ent) {
     new ContextMenu(ent, [
         {
-            label: 'Payphone'
+            label: 'Telefon'
         },
         {
-            label: 'Use Phone',
+            label: 'Telefon benutzen',
             isServer: true,
             event: 'use:PayPhone'
         }
@@ -233,7 +233,7 @@ function metroTicketMachine(ent) {
             label: 'Metro Ticket Machine'
         },
         {
-            label: 'Buy Ticket',
+            label: 'Ticket kaufen',
             isServer: true,
             event: 'use:MetroTicketMachine'
         }
@@ -246,7 +246,7 @@ function postalBox(ent) {
             label: 'Postal Box'
         },
         {
-            label: 'Use',
+            label: 'Benutzen',
             isServer: true,
             event: 'use:PostalBox'
         }
@@ -259,17 +259,17 @@ function dumpster(ent) {
             label: 'Dumpster'
         },
         {
-            label: 'Hide',
+            label: 'Verstecken',
             isServer: true,
             event: 'use:HideDumpster'
         },
         {
-            label: 'Search',
+            label: 'Suchen',
             isServer: true,
             event: 'use:SearchDumpster'
         },
         {
-            label: 'Leave',
+            label: 'Verlassen',
             isServer: true,
             event: 'use:LeaveDumpster'
         }
@@ -282,7 +282,7 @@ function atm(ent) {
             label: 'ATM'
         },
         {
-            label: 'Use',
+            label: 'Benutzen',
             isServer: true,
             event: 'use:Atm'
         }
@@ -326,7 +326,7 @@ function doorControl(ent) {
             label: `Locked: ${locked}`
         },
         {
-            label: 'Toggle',
+            label: 'Benutzen',
             isServer: true,
             event: 'use:ToggleDoor',
             data: {
