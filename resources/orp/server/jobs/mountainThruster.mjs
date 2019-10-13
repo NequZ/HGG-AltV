@@ -22,7 +22,7 @@ let interaction = new Interaction(
     'job:MountainThruster',
     3,
     3,
-    'um den Trainingskurs zu beginnen.'
+    'to begin training agility.'
 );
 interaction.addBlip(126, 6, jobName);
 
@@ -34,7 +34,7 @@ alt.on('job:MountainThruster', player => {
     let obj = new Objective(objectives.POINT, modifiers.ON_FOOT);
     obj.setPosition(trackStart);
     obj.setRange(3);
-    obj.setHelpText('Nehme dein Gerät auf.');
+    obj.setHelpText('Pick up your waterscooter.');
     obj.setBlip(255, 1, trackStart);
     obj.setMarker(
         0,
@@ -53,7 +53,7 @@ alt.on('job:MountainThruster', player => {
     // Setup the rest of the points.
     trackPoints.forEach(pos => {
         obj = new Objective(objectives.POINT, modifiers.IN_VEHICLE);
-        obj.setHelpText('Folge dem Kurs weiterhin.');
+        obj.setHelpText('Follow the course down.');
         obj.setPosition(pos);
         obj.setRange(3);
         obj.setBlip(1, 2, pos);
@@ -75,7 +75,7 @@ alt.on('job:MountainThruster', player => {
 
     let pos = { x: -1186.2593994140625, y: 3856.404296875, z: 489.987548828125 };
     obj = new Objective(objectives.POINT, modifiers.IN_VEHICLE);
-    obj.setHelpText('Beende den Kurs.');
+    obj.setHelpText('Finish the course.');
     obj.setPosition(pos);
     obj.setBlip(1, 2, pos);
     obj.setMarker(

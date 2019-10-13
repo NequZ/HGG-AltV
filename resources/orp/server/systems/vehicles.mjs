@@ -130,7 +130,7 @@ export function toggleDoor(player, vehicle, id) {
             return;
         }
 
-        player.send('{00FF00} Dein Fahrzeug ist nun aufgeschlossen.');
+        player.send('{00FF00} Your vehicle was unlocked.');
         vehicle.lockState = 1;
     }
 
@@ -140,7 +140,7 @@ export function toggleDoor(player, vehicle, id) {
 export function toggleLock(player, vehicle) {
     const dist = utilityVector.distance(player.pos, vehicle.pos);
     if (dist > 5) {
-        player.send(`{FF0000} Du bist zu weit weg um dein Fahrzeug auf/abzuschließen`);
+        player.send(`{FF0000} You're too far away to toggle the lock.`);
         return;
     }
 
@@ -150,14 +150,14 @@ export function toggleLock(player, vehicle) {
 
     if (vehicle.lockState === 2) {
         vehicle.lockState = 1; // Unlocked
-        player.send('Dein Fahrzeug ist nun aufgeschlossen.');
+        player.send('Your vehicle is now unlocked.');
 
         if (!player.vehicle) {
             alt.emitClient(null, 'vehicle:SoundHorn', vehicle, false);
         }
     } else {
         vehicle.lockState = 2; // Locked
-        player.send('Dein Fahrzeug ist nun abgeschlossen.');
+        player.send('Your vehicle is now locked.');
 
         if (!player.vehicle) {
             alt.emitClient(null, 'vehicle:SoundHorn', vehicle, true);
@@ -190,16 +190,16 @@ export function toggleSafetyLock(player, vehicle) {
 
     if (vehicle.lockState === 4) {
         vehicle.lockState = 2;
-        player.send('Sicherheitsschließung AUS.');
+        player.send('Safety Lock was turned off.');
     } else {
         vehicle.lockState = 4;
-        player.send('Sicherheitsschließung AN.');
+        player.send('Safety Lock was turned on.');
     }
 }
 
 export function saveChanges(player, vehicle, jsonData) {
     if (!player.vehicles || !player.vehicles.includes(vehicle)) {
-        player.send('Das ist nicht dein Fahrzeug.');
+        player.send('This is not your vehicle; you cannot modify it.');
         vehicle.syncCustom();
         return;
     }

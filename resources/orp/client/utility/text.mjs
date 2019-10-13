@@ -3,6 +3,30 @@ import * as native from 'natives';
 
 alt.log('Loaded: client->utility->text.mjs');
 
+alt.onServer('text:playerAction', (player, msg) => {
+    const interval = alt.setInterval(() => {
+        alt.nextTick(() => {
+            drawText3d(
+                `* ${msg} *`,
+                player.pos.x,
+                player.pos.y,
+                player.pos.z + 0.4,
+                0.4,
+                4,
+                255,
+                255,
+                255,
+                255,
+                true,
+                false
+            );
+        });
+    }, 0);
+    alt.setTimeout(() => {
+        alt.clearInterval(interval);
+    }, 5000);
+});
+
 alt.onServer('text:Animated', (text, duration) => {
     let pos = alt.Player.local.pos;
     let alpha = 255;
@@ -32,6 +56,14 @@ alt.onServer('text:Animated', (text, duration) => {
     }, duration);
 });
 
+function hexToRgb(hex) {
+    var bigint = parseInt(hex, 16);
+    var r = (bigint >> 16) & 255;
+    var g = (bigint >> 8) & 255;
+    var b = bigint & 255;
+    return [r, g, b];
+}
+
 export function drawText3d(
     msg,
     x,
@@ -47,6 +79,15 @@ export function drawText3d(
     useDropShadow = true,
     layer = 0
 ) {
+    let hex = msg.match('{.*}');
+    if (hex) {
+        const rgb = hexToRgb(hex[0].replace('{', '').replace('}', ''));
+        r = rgb[0];
+        g = rgb[1];
+        b = rgb[2];
+        msg = msg.replace(hex[0], '');
+    }
+
     native.setDrawOrigin(x, y, z, 0);
     native.beginTextCommandDisplayText('STRING');
     native.addTextComponentSubstringPlayerName(msg);
@@ -79,6 +120,15 @@ export function drawText2d(
     layer = 0,
     align = 0
 ) {
+    let hex = msg.match('{.*}');
+    if (hex) {
+        const rgb = hexToRgb(hex[0].replace('{', '').replace('}', ''));
+        r = rgb[0];
+        g = rgb[1];
+        b = rgb[2];
+        msg = msg.replace(hex[0], '');
+    }
+
     //native.setScriptGfxDrawOrder(layer);
     native.beginTextCommandDisplayText('STRING');
     native.addTextComponentSubstringPlayerName(msg);

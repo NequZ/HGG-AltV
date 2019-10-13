@@ -3,7 +3,7 @@ import * as alt from 'alt';
 import SQL from '../../postgres-wrapper/database.mjs'; // Database
 import { Account, Character, Vehicle, Details } from './entities/entities.mjs'; // Schemas for Database
 import * as configurationDatabase from './configuration/database.mjs'; // Database Configuration
-import { cacheAccount, setVehicleID, setServerDetails } from './cache/cache.mjs';
+import { cacheAccount, setVehicleID } from './cache/cache.mjs';
 
 // Setup Main Entities and Database Connection
 let db = new SQL(
@@ -48,6 +48,7 @@ alt.on('ConnectionComplete', () => {
     import('./commands/taxi.mjs');
     import('./commands/mechanic.mjs');
     import('./commands/phone.mjs');
+    import('./commands/mdc.mjs');
 
     // Systems
     import('./systems/anticheat.mjs');
@@ -75,14 +76,15 @@ alt.on('ConnectionComplete', () => {
     import('./jobs/miningShaft.mjs');
     import('./jobs/playerTaxi.mjs');
     import('./jobs/playerMechanic.mjs');
+    import('./jobs/officer.mjs');
     import('./jobs/refineKevlarium.mjs');
     import('./jobs/refineVigorium.mjs');
     import('./jobs/smithingRefinery.mjs');
     import('./jobs/woodcuttingLumber.mjs');
     import('./jobs/woodcuttingRefinery.mjs');
     import('./jobs/drivingSchool.mjs');
+    import('./jobs/mountainThruster.mjs');
     
-
     // Import Item Effects
     import('./itemeffects/consume.mjs');
     import('./itemeffects/showlicense.mjs');

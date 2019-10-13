@@ -53,7 +53,9 @@ export const modifiers = {
     GOTO_PLAYER: 256,
     REMOVE_ITEM: 512,
     CLEAR_PROPS: 1024,
-    MAX: 2048
+    NO_DAMAGE_VEHICLE: 2048,
+    NULL_PLAYER: 4096,
+    MAX: 8192
 };
 
 const metaTypes = {
@@ -117,7 +119,10 @@ function setupObjective(value) {
     }
 
     objectiveInfo = alt.setInterval(intervalObjectiveInfo, 0);
-    objectiveChecking = alt.setInterval(intervalObjectiveChecking, 100);
+
+    if (!isFlagged(objective.flags, modifiers.NULL_PLAYER)) {
+        objectiveChecking = alt.setInterval(intervalObjectiveChecking, 100);
+    }
 
     alt.log(`job.mjs ${objectiveInfo}`);
     alt.log(`job.mjs ObjChecking ${objectiveChecking}`);
@@ -503,10 +508,16 @@ function minigame() {
         minigameView.open('http://resource/client/html/pixigames/index.html', true);
         minigameView.on('minigame:Complete', completeMiniGame);
         minigameView.on('minigame:Ready', () => {
+            alt.log('Game View Ready!');
+            alt.log(objective.minigame);
             minigameView.emit(`minigame:${objective.minigame}`, objective.minigamehash);
             alt.setTimeout(() => {
                 playAnimation();
             }, 2000);
+        });
+        minigameView.on('minigame:Quit', () => {
+            alt.emitServer('job:Quit', false, true);
+            minigameView.close();
         });
     }
 }

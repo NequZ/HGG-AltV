@@ -117,14 +117,14 @@ const hairOverlaysFemale = {
 
 const facialFeatures = {
     Sex: {
-        label: 'Geschlecht',
+        label: 'Sex',
         value: 0,
         min: 0,
         max: 1,
         increment: 1
     },
     Hair: {
-        label: 'Haare',
+        label: 'Hair',
         value: 0,
         min: 0,
         max: 78,
@@ -136,7 +136,7 @@ const facialFeatures = {
         maleBlacklist: [23]
     },
     HairColor: {
-        label: 'Haare färben',
+        label: 'Hair Color',
         value: 0,
         min: 0,
         max: 78,
@@ -166,7 +166,7 @@ const facialFeatures = {
         group: faceGroups['Hair']
     },
     EyesColor: {
-        label: 'Augenfarbe',
+        label: 'Eyes Color',
         value: 0,
         min: 0,
         max: 32,
@@ -197,7 +197,7 @@ const facialFeatures = {
         group: faceGroups['Blemishes']
     },
     FacialHair: {
-        label: 'Bart',
+        label: 'Facial Hair',
         value: 0,
         min: 0,
         max: 28,
@@ -209,7 +209,7 @@ const facialFeatures = {
         group: faceGroups['FacialHair']
     }, // 37, 2
     FacialHairOpacity: {
-        label: 'Bartgröße',
+        label: 'Facial Hair Opacity',
         value: 0,
         min: 0,
         max: 1,
@@ -221,7 +221,7 @@ const facialFeatures = {
         group: faceGroups['FacialHair']
     },
     FacialHairColor: {
-        label: 'Bartfarbe',
+        label: 'Facial Hair Color',
         value: 0,
         min: 0,
         max: 1,
@@ -233,7 +233,7 @@ const facialFeatures = {
         group: faceGroups['FacialHair']
     },
     FacialHairColor2: {
-        label: '2te Bartfarbe',
+        label: 'Facial Hair Color 2',
         value: 0,
         min: 0,
         max: 1,
@@ -245,7 +245,7 @@ const facialFeatures = {
         group: faceGroups['FacialHair']
     },
     Eyebrows: {
-        label: 'Augenbrauen',
+        label: 'Eyebrows',
         value: 0,
         min: 0,
         max: 33,
@@ -257,7 +257,7 @@ const facialFeatures = {
         group: faceGroups['Eyebrows']
     }, // 41
     EyebrowsOpacity: {
-        label: 'Augenbrauen Größe',
+        label: 'Eyebrows Opacity',
         value: 0,
         min: 0,
         max: 1,
@@ -269,7 +269,7 @@ const facialFeatures = {
         group: faceGroups['Eyebrows']
     },
     EyebrowsColor: {
-        label: 'Augenbrauen Farbe',
+        label: 'Eyebrows Color',
         value: 0,
         min: 0,
         max: 1,
@@ -281,7 +281,7 @@ const facialFeatures = {
         group: faceGroups['Eyebrows']
     },
     EyebrowsColor2: {
-        label: '2te Augenbrauen Farbe',
+        label: 'Eyebrows Color 2',
         value: 0,
         min: 0,
         max: 1,
@@ -293,7 +293,7 @@ const facialFeatures = {
         group: faceGroups['Eyebrows']
     },
     Age: {
-        label: 'Alter',
+        label: 'Age',
         value: 0,
         min: 0,
         max: 14,
@@ -327,7 +327,7 @@ const facialFeatures = {
         group: faceGroups['Makeup']
     }, // 47
     MakeupOpacity: {
-        label: 'Makeup Intesivität',
+        label: 'Makeup Opacity',
         value: 0,
         min: 0,
         max: 1,
@@ -339,7 +339,7 @@ const facialFeatures = {
         group: faceGroups['Makeup']
     },
     MakeupColor: {
-        label: 'Makeup Farbe',
+        label: 'Makeup Color',
         value: 0,
         min: 0,
         max: 1,
@@ -351,7 +351,7 @@ const facialFeatures = {
         group: faceGroups['Makeup']
     },
     MakeupColor2: {
-        label: '2te Makeup Farbe',
+        label: 'Makeup Color 2',
         value: 0,
         min: 0,
         max: 1,

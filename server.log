@@ -1,10 +1,41 @@
-[21:24:39] alt:V Server, build #813, branch beta
-[21:24:39] Starting [GER] Highgroundgaming AltV [DevServer] on 0.0.0.0:7788
-[21:24:39] Loading resource orp
-[21:24:40] Loaded resource orp
-[21:24:40] Loading resource postgres-wrapper
-[21:24:43] Loaded resource postgres-wrapper
-[21:24:43] Starting HTTP server on 0.0.0.0:7788
-[21:24:43] Server started
-[21:24:43] Connected to master server
-[21:24:49] Loaded: events->playerEnteredVehicle.mjs	
+[00:37:22] alt:V Server, build #814, branch beta
+[00:37:22] Starting [GER] Highgroundgaming AltV [DevServer] on 0.0.0.0:7788
+[00:37:22] Loading resource orp
+[00:37:23] Loaded resource orp
+[00:37:23] Loading resource postgres-wrapper
+[00:37:25] Loaded resource postgres-wrapper
+[00:37:25] Loading resource speedo
+[00:37:27] Loaded resource speedo
+[00:37:27] Starting HTTP server on 0.0.0.0:7788
+[00:37:27] Server started
+[00:37:27] Connected to master server
+[00:37:30] Loaded: events->playerEnteredVehicle.mjs	
+[00:37:36] Ravish has disconnected.	
+[00:37:36] Ravish has connected.	
+[00:37:42] Ravish is attempting a login with Ravish.	
+[00:37:42] Ravish has logged in.	
+[00:37:43] Brian Anderson has spawned.	
+[00:37:54] [CMD] Ravish: /tpwp	
+[00:38:06] SuZ has connected.	
+[00:38:12] SuZ is attempting a login with TrunksLaw.	
+[00:38:12] SuZ has logged in.	
+[00:38:20] Trunks_Law has spawned.	
+[00:39:16] Ravish has disconnected.	
+[00:39:16] Ravish has connected.	
+[00:39:21] Ravish is attempting a login with Ravish.	
+[00:39:22] Ravish has logged in.	
+[00:39:27] Brian Anderson has spawned.	
+[00:39:31] [CMD] Ravish: /help	
+[00:39:42] [CMD] Ravish: /setxp	
+[00:39:51] [CMD] Ravish: /setxp nobility 100000	
+[00:40:01] [CMD] SuZ: /tpto Brian Anderson	
+[00:40:32] [CMD] Ravish: /mdc	
+[00:41:11] [CMD] Ravish: /mdc	
+[00:41:23] [CMD] Ravish: /mdc	
+[00:41:56] [CMD] SuZ: /addxp	
+[00:42:02] [CMD] Ravish: /mdc	
+[00:42:05] [CMD] Ravish: /mdc	
+[00:42:06] [CMD] SuZ: /addxp nobility 5000000	
+[00:42:54] [CMD] Ravish: /mdc	
+[00:42:57] [CMD] SuZ: /mdc	
+[00:43:00] [CMD] SuZ: /mdc	

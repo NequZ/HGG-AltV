@@ -5,10 +5,10 @@ import { ContextMenu } from '/client/systems/context.mjs';
 alt.log('Loaded: client->contextmenus->vehicle.mjs');
 
 const doorNames = [
-    'Fahrertür',
-    'Beifahrertür',
-    'Hintere Fahrertür',
-    'Hintere Beifahrertür'
+    'Driver Door',
+    'Passenger Door',
+    'Driver Rear Door',
+    'Passenger Back Door'
 ];
 
 alt.on('menu:Vehicle', ent => {
@@ -24,17 +24,17 @@ alt.on('menu:Vehicle', ent => {
                 label: name
             },
             {
-                label: 'Fahrzeug Auf/Abschließen',
+                label: 'Toggle Lock',
                 isServer: true,
                 event: 'vehicle:ToggleLock'
             },
             {
-                label: 'Motor An/Abschalten',
+                label: 'Toggle Engine',
                 isServer: true,
                 event: 'vehicle:ToggleEngine'
             },
             {
-                label: 'Sicherheitsschließung',
+                label: 'Safety Lock',
                 isServer: true,
                 event: 'vehicle:SafetyLock'
             }
@@ -53,12 +53,12 @@ alt.on('menu:Vehicle', ent => {
             label: name
         },
         {
-            label: 'Fahrzeug Auf/Abschließen',
+            label: 'Toggle Lock',
             isServer: true,
             event: 'vehicle:ToggleLock'
         },
         {
-            label: 'Tür Menü',
+            label: 'Doors Menu',
             isServer: false,
             event: 'submenu:VehicleDoors'
         }
@@ -70,16 +70,16 @@ alt.on('submenu:VehicleDoors', ent => {
 
     let items = [
         {
-            label: 'Tür Menü'
+            label: 'Door Control'
         },
         {
-            label: 'Kofferraum',
+            label: 'Trunk',
             isServer: true,
             event: 'vehicle:ToggleDoor',
             data: 5
         },
         {
-            label: 'Motorhaube',
+            label: 'Hood',
             isServer: true,
             event: 'vehicle:ToggleDoor',
             data: 4

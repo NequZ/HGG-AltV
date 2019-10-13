@@ -72,7 +72,7 @@ export class QuickInteract {
         if (!this.interacting) return;
 
         // Show Help / Disable Control for Usage
-        const msg = 'Drücke ~INPUT_CONTEXT~ um das Interaktionsmenü zu benutzen';
+        const msg = 'Hold ~INPUT_CONTEXT~ to Use Interaction Menu';
         native.beginTextCommandDisplayHelp('STRING');
         native.addTextComponentSubstringPlayerName(msg);
         native.endTextCommandDisplayHelp(0, false, true, -1);

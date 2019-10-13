@@ -4,6 +4,18 @@ export const BaseItems = {
         abilities: {
             drop: true,
             use: true,
+            destroy: false,
+            sell: true,
+            rename: false,
+            stack: false
+        },
+        slot: 11
+    },
+    boundweapon: {
+        eventcall: 'itemeffects:EquipItem',
+        abilities: {
+            drop: false,
+            use: true,
             destroy: true,
             sell: true,
             rename: false,
@@ -201,7 +213,7 @@ export const BaseItems = {
             rename: true,
             stack: false
         },
-        slot: 12
+        slot: 14
     },
     pickaxe: {
         eventcall: 'itemeffects:EquipItem',
@@ -268,7 +280,7 @@ export const BaseItems = {
         abilities: {
             drop: true,
             use: false,
-            destroy: true,
+            destroy: false,
             sell: true,
             rename: false,
             stack: false
@@ -280,7 +292,7 @@ export const BaseItems = {
         abilities: {
             drop: true,
             use: false,
-            destroy: true,
+            destroy: false,
             sell: true,
             rename: false,
             stack: true
@@ -292,7 +304,7 @@ export const BaseItems = {
         abilities: {
             drop: true,
             use: false,
-            destroy: true,
+            destroy: false,
             sell: true,
             rename: false,
             stack: true
@@ -365,7 +377,7 @@ export const Items = {
         icon: 'soda'
     },
     hat: {
-        name: 'Hut',
+        name: 'Hat',
         base: 'hat',
         key: 'hat',
         props: {},
@@ -373,7 +385,7 @@ export const Items = {
         icon: 'hat'
     },
     helmet: {
-        name: 'Helm',
+        name: 'Helmet',
         base: 'helmet',
         key: 'helmet',
         props: {},
@@ -389,7 +401,7 @@ export const Items = {
         icon: 'shirt'
     },
     pants: {
-        name: 'Hose',
+        name: 'Pants',
         base: 'pants',
         key: 'pants',
         props: {},
@@ -397,7 +409,7 @@ export const Items = {
         icon: 'trousers'
     },
     shoes: {
-        name: 'Schuhe',
+        name: 'Shoes',
         base: 'shoes',
         key: 'shoes',
         props: {},
@@ -405,7 +417,7 @@ export const Items = {
         icon: 'chelsea-boot'
     },
     bodyarmour: {
-        name: 'Körperrüstung',
+        name: 'Body Armour',
         base: 'bodyarmour',
         key: 'bodyarmour',
         props: {},
@@ -413,7 +425,7 @@ export const Items = {
         icon: 'body-armour'
     },
     accessory: {
-        name: 'Accessoire',
+        name: 'Accessory',
         base: 'accessory',
         key: 'accessory',
         props: {},
@@ -421,7 +433,7 @@ export const Items = {
         icon: 'accessory'
     },
     earrings: {
-        name: 'Ohrenschmuck',
+        name: 'Earrings',
         base: 'earrings',
         key: 'earrings',
         props: {},
@@ -429,7 +441,7 @@ export const Items = {
         icon: 'earring'
     },
     backpack: {
-        name: 'Rucksack',
+        name: 'Backpack',
         base: 'backpack',
         key: 'backpack',
         props: {},
@@ -445,7 +457,7 @@ export const Items = {
         icon: 'hand'
     },
     watch: {
-        name: 'Uhr',
+        name: 'Watch',
         base: 'watch',
         key: 'watch',
         props: {},
@@ -461,7 +473,7 @@ export const Items = {
         icon: 'bracelet'
     },
     glasses: {
-        name: 'Brillen',
+        name: 'Glasses',
         base: 'glasses',
         key: 'glasses',
         props: {},
@@ -469,7 +481,7 @@ export const Items = {
         icon: 'glasses'
     },
     unrefinedwood: {
-        name: 'Unfertiges Holz',
+        name: 'Unrefined Wood',
         base: 'unrefined',
         key: 'unrefinedwood',
         props: {},
@@ -477,7 +489,7 @@ export const Items = {
         icon: 'wood'
     },
     refinedwood: {
-        name: 'Verarbeitetes Holz',
+        name: 'Refined Wood',
         base: 'refined',
         key: 'refinedwood',
         props: {},
@@ -485,7 +497,7 @@ export const Items = {
         icon: 'planks'
     },
     unrefinedmetal: {
-        name: 'Unfertiges Metal',
+        name: 'Unrefined Metal',
         base: 'unrefined',
         key: 'unrefinedmetal',
         props: {},
@@ -493,7 +505,7 @@ export const Items = {
         icon: 'rock'
     },
     refinedmetal: {
-        name: 'Verarbeitetes Metal',
+        name: 'Refined Metal',
         base: 'refined',
         key: 'refinedmetal',
         props: {},
@@ -501,7 +513,7 @@ export const Items = {
         icon: 'metal'
     },
     unrefinedkevlarium: {
-        name: 'Unfertiges Kevlarium',
+        name: 'Unrefined Kevlarium',
         base: 'unrefined',
         key: 'unrefinedkevlarium',
         props: {},
@@ -509,7 +521,7 @@ export const Items = {
         icon: 'leaf'
     },
     refinedkevlarium: {
-        name: 'Verarbeitetes Kevlarium',
+        name: 'Refined Kevlarium',
         base: 'refineddrug',
         key: 'refinedkevlarium',
         props: {
@@ -520,7 +532,7 @@ export const Items = {
         icon: 'pills'
     },
     unrefinedvigorium: {
-        name: 'Unverarbeitete Vigorium Samen',
+        name: 'Unrefined Vigorium Seeds',
         base: 'unrefined',
         key: 'unrefinedvigorium',
         props: {},
@@ -528,7 +540,7 @@ export const Items = {
         icon: 'seeds'
     },
     refinedvigorium: {
-        name: 'Verarbeite Vigorium',
+        name: 'Refined Vigorium',
         base: 'refineddrug',
         key: 'refinedvigorium',
         props: {
@@ -545,7 +557,7 @@ export const Items = {
         icon: 'syringe'
     },
     pickaxe1: {
-        name: 'Rostige Spitzhacke',
+        name: 'Rusty Pickaxe',
         base: 'pickaxe',
         key: 'pickaxe1',
         props: {
@@ -569,7 +581,7 @@ export const Items = {
         icon: 'pickaxe'
     },
     axe1: {
-        name: 'Rostige Axt',
+        name: 'Rusty Axe',
         base: 'axe',
         key: 'axe1',
         props: {
@@ -593,7 +605,7 @@ export const Items = {
         icon: 'axe'
     },
     hammer1: {
-        name: 'Rostiger Hammer',
+        name: 'Rusty Hammer',
         base: 'hammer',
         key: 'hammer1',
         props: {
@@ -617,7 +629,7 @@ export const Items = {
         icon: 'hammer'
     },
     fishingrod1: {
-        name: 'Rostige Angel',
+        name: 'Rusty Fishing Rod',
         base: 'fishingrod',
         key: 'fishingrod1',
         props: {
@@ -641,7 +653,7 @@ export const Items = {
         icon: 'fishingrod'
     },
     tracksuit: {
-        name: 'Übungsanzug',
+        name: 'Track Suit',
         base: 'uniform',
         key: 'tracksuit',
         props: {
@@ -690,8 +702,32 @@ export const Items = {
         quantity: 0,
         icon: 'outfit'
     },
+    policeuniform: {
+        name: 'Police Uniform',
+        base: 'uniform',
+        key: 'policeuniform',
+        props: {
+            restriction: -1,
+            female: [
+                { id: 3, value: 9 },
+                { id: 4, value: 30 },
+                { id: 6, value: 24 },
+                { id: 8, value: 35 },
+                { id: 11, value: 48 }
+            ],
+            male: [
+                { id: 3, value: 0 },
+                { id: 4, value: 31 },
+                { id: 6, value: 24 },
+                { id: 8, value: 58 },
+                { id: 11, value: 55 }
+            ]
+        },
+        quantity: 0,
+        icon: 'outfit'
+    },
     driverslicense: {
-        name: 'Führerschein',
+        name: 'Drivers License',
         base: 'license',
         key: 'driverslicense',
         props: {},
@@ -699,7 +735,7 @@ export const Items = {
         icon: 'id-card'
     },
     rope: {
-        name: 'Seile (5 Min)',
+        name: 'Bundle of Rope (5 Min)',
         base: 'rope',
         key: 'rope',
         props: {},
@@ -707,7 +743,7 @@ export const Items = {
         icon: 'rope'
     },
     cuffs: {
-        name: 'Handschellen (10 Min)',
+        name: 'Cuffs (10 Min)',
         base: 'cuffs',
         key: 'cuffs',
         props: {},

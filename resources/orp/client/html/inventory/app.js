@@ -78,9 +78,9 @@ const slots = [
     'bracelet', // 9
     'trousers', // 10
     'hand', // 11
-    'outfit', // 12
+    'unknown', // 12
     'chelsea-boot', // 13
-    'unknown' // 14
+    'outfit' // 14
 ];
 
 // The main rendering function.
@@ -158,9 +158,9 @@ class App extends Component {
                 // Inventory
                 this.state.tabIndex == 2 && h(Inventory),
                 // Idk Yet
-                this.state.tabIndex == 3 && h('div', {}, 'W.I.P.'),
+                this.state.tabIndex == 3 && h('div', {}, 'idk'),
                 // Settings
-                this.state.tabIndex == 4 && h('div', {}, 'Einstellungen')
+                this.state.tabIndex == 4 && h('div', {}, 'settings')
             )
         );
     }
@@ -539,22 +539,22 @@ class Inventory extends Component {
             h(
                 'button',
                 { class: 'contextOption', onclick: this.useItem.bind(this) },
-                'Benutzen'
+                'Use'
             ),
             h(
                 'button',
                 { class: 'contextOption', onclick: this.dropItem.bind(this) },
-                'Wegwerfen'
+                'Drop'
             ),
             h(
                 'button',
                 { class: 'contextOption', onclick: this.destroyItem.bind(this) },
-                'Zerstören'
+                'Destroy'
             ),
             h(
                 'button',
                 { class: 'contextOption', onclick: this.renameItem.bind(this) },
-                'Umbenennen'
+                'Rename'
             )
         );
     }
@@ -882,7 +882,7 @@ class Profile extends Component {
             h(
                 'button',
                 { class: 'contextOption', onclick: this.unequipItem.bind(this) },
-                'Ablegen'
+                'Unequip'
             )
         );
     }

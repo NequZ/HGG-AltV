@@ -4,70 +4,70 @@ const h = createElement;
 /* eslint-disable no-undef */
 const clothing = {
     Shirt: {
-        label: 'T-Shirt',
+        label: 'Shirt',
         value: 0,
         min: 0,
         max: 1,
         id: 11
     },
     ShirtTexture: {
-        label: 'T-Shirt Textur',
+        label: 'Shirt Texture',
         value: 0,
         min: 0,
         max: 1,
         id: 11
     },
     Undershirt: {
-        label: 'Untershirt',
+        label: 'Undershirt',
         value: 0,
         min: 0,
         max: 1,
         id: 8
     },
     UndershirtTexture: {
-        label: 'Untershirt Textur',
+        label: 'Undershirt Texture',
         value: 0,
         min: 0,
         max: 1,
         id: 8
     },
     Arms: {
-        label: 'Arme',
+        label: 'Arms',
         value: 0,
         min: 0,
         max: 1,
         id: 3
     },
     ArmsTexture: {
-        label: 'Armfarbe',
+        label: 'Arms Texture',
         value: 0,
         min: 0,
         max: 1,
         id: 3
     },
     Pants: {
-        label: 'Hosen',
+        label: 'Pants',
         value: 0,
         min: 0,
         max: 1,
         id: 4
     },
     PantsTexture: {
-        label: 'Hosen Textur',
+        label: 'Pants Texture',
         value: 0,
         min: 0,
         max: 1,
         id: 4
     },
     Shoes: {
-        label: 'Schuhe',
+        label: 'Shoes',
         value: 0,
         min: 0,
         max: 1,
         id: 6
     },
     ShoesTexture: {
-        label: 'Schuhefarbe',
+        label: 'Shoes Texture',
         value: 0,
         min: 0,
         max: 1,
@@ -81,14 +81,14 @@ const clothing = {
         id: 7
     },
     AccessoriesTexture: {
-        label: 'Accessories Farbe',
+        label: 'Accessories Texture',
         value: 0,
         min: 0,
         max: 1,
         id: 7
     },
     Hat: {
-        label: 'Hüte',
+        label: 'Hat',
         value: -1,
         min: -1,
         max: 1,
@@ -96,7 +96,7 @@ const clothing = {
         isProp: true
     },
     HatTexture: {
-        label: 'Hutfarbe',
+        label: 'Hat Texture',
         value: 0,
         min: 0,
         max: 1,
@@ -104,7 +104,7 @@ const clothing = {
         isProp: true
     },
     Glasses: {
-        label: 'Brillen',
+        label: 'Glasses',
         value: -1,
         min: -1,
         max: 1,
@@ -112,7 +112,7 @@ const clothing = {
         isProp: true
     },
     GlassesTexture: {
-        label: 'Brillen Textur',
+        label: 'Glasses Texture',
         value: 0,
         min: 0,
         max: 1,
@@ -120,7 +120,7 @@ const clothing = {
         isProp: true
     },
     Earpiece: {
-        label: 'Ohrenzubehör',
+        label: 'Earpiece',
         value: -1,
         min: -1,
         max: 1,
@@ -128,7 +128,7 @@ const clothing = {
         isProp: true
     },
     EarpieceTexture: {
-        label: 'Ohrenzubehör Textur',
+        label: 'Earpiece Texture',
         value: 0,
         min: 0,
         max: 1,
@@ -136,7 +136,7 @@ const clothing = {
         isProp: true
     },
     Watches: {
-        label: 'Uhren',
+        label: 'Watches',
         value: -1,
         min: -1,
         max: 1,
@@ -144,7 +144,7 @@ const clothing = {
         isProp: true
     },
     WatchesTexture: {
-        label: 'Uhrenfarbe',
+        label: 'Watches Texture',
         value: 0,
         min: 0,
         max: 1,
@@ -152,7 +152,7 @@ const clothing = {
         isProp: true
     },
     Bracelet: {
-        label: 'Armband',
+        label: 'Bracelet',
         value: -1,
         min: -1,
         max: 1,
@@ -160,7 +160,7 @@ const clothing = {
         isProp: true
     },
     BraceletTexture: {
-        label: 'Armband',
+        label: 'Bracelet Texture',
         value: 0,
         min: 0,
         max: 1,
@@ -174,7 +174,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            message: 'Laden...',
+            message: 'loading...',
             hairChanged: false,
             clothingData: [],
             sex: 0,
@@ -389,7 +389,7 @@ class App extends Component {
         return h(
             'div',
             { id: 'app' },
-            h('div', { class: 'tab' }, h('h1', { class: 'title' }, 'Kleidung')),
+            h('div', { class: 'tab' }, h('h1', { class: 'title' }, 'Clothing')),
             h(
                 'div',
                 { class: 'mod-list scroll' },
@@ -402,16 +402,16 @@ class App extends Component {
             h(
                 'div',
                 { class: `basket scroll ${this.state.basket.length ? 'show' : null}` },
-                h('div', { class: 'basket-title' }, h('h1', { class: 'title' }, 'Warenkorb')),
+                h('div', { class: 'basket-title' }, h('h1', { class: 'title' }, 'Basket')),
                 h('hr'),
                 h(ShoppingBasket, {
                     basket: this.state.basket,
                     removeItem: this.removeItem.bind(this)
                 }),
                 h('hr'),
-                h('div', { class: 'basket-purchase', onclick: this.purchase.bind(this) }, 'Kaufen')
+                h('div', { class: 'basket-purchase', onclick: this.purchase.bind(this) }, 'Purchase')
             ),
-            h('div', { class: 'footer', onclick: this.submitChanges.bind(this) }, 'Verlassen')
+            h('div', { class: 'footer', onclick: this.submitChanges.bind(this) }, 'Exit')
         );
         // Render HTML / Components and Shit Here
     }
@@ -471,7 +471,7 @@ const ClothingItem = ({ index, item, setItemValue, basket }) => {
                 h(
                     'button',
                     { class: 'buy', id: `${index}`, onclick: basket.bind(this) },
-                    `In den Warenkrob`
+                    `Put into basket`
                 )
         )
     );
