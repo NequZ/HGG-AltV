@@ -71,11 +71,11 @@ class App extends Component {
         this.state = {
             messages: [
                 {
-                    message: `Hit F1 to toggle help.`,
+                    message: `Drücke F1 für das HilfeMenü.`,
                     style: 'color: rgba(255, 255, 255, 1) !important;'
                 },
                 {
-                    message: 'Hold TAB to use context cursor.',
+                    message: 'Halte TAB gedrückt für Interkationen.',
                     style: 'color: rgba(255, 255, 255, 1) !important;'
                 }
             ],
