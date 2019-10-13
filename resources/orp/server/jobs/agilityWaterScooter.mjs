@@ -34,9 +34,7 @@ const trackPoints = [
     { x: -2043.8505859375, y: 2558.333984375, z: 0.7193603515625 },
     { x: -2128.23291015625, y: 2591.195556640625, z: 0.753173828125 },
     { x: -2204.017578125, y: 2597.182373046875, z: 0.77001953125 },
-    { x: -2266.707763671875, y: 2595.876953125, z: 0.77001953125 },
-    { x: -2346, y: 2591.195556640625, z: 0.77001953125 },
-    { x: -2417.235107421875, y: 2581.371337890625, z: 0.736328125 }
+    { x: -2266.707763671875, y: 2595.876953125, z: 0.77001953125 }
 ];
 
 let interactionPoint = { ...trackStart };
@@ -47,7 +45,7 @@ let interaction = new Interaction(
     'job:WaterScooter',
     3,
     3,
-    'to begin training agility.'
+    'um das Training zu beginnen.'
 );
 interaction.addBlip(126, 6, jobName);
 
@@ -59,7 +57,7 @@ alt.on('job:WaterScooter', player => {
     let obj = new Objective(objectives.POINT, modifiers.ON_FOOT);
     obj.setPosition(trackStart);
     obj.setRange(3);
-    obj.setHelpText('Pick up your waterscooter.');
+    obj.setHelpText('Steige auf dein Jetski.');
     obj.setBlip(255, 1, trackStart);
     obj.setMarker(
         0,
@@ -78,7 +76,7 @@ alt.on('job:WaterScooter', player => {
     // Setup the rest of the points.
     trackPoints.forEach(pos => {
         obj = new Objective(objectives.POINT, modifiers.IN_VEHICLE);
-        obj.setHelpText('Follow the course down.');
+        obj.setHelpText('Folge dem Kurs weiterhin!.');
         obj.setPosition(pos);
         obj.setRange(3);
         obj.setBlip(1, 2, pos);
@@ -98,9 +96,9 @@ alt.on('job:WaterScooter', player => {
         job.add(copyObjective(obj));
     });
 
-    let pos = { x: -2417.235107421875, y: 2581.371337890625, z: 0.736328125 };
+    let pos = { x: -2298.38232421875, y: 2565.78466796875, z: 0.3992919921875 };
     obj = new Objective(objectives.POINT, modifiers.IN_VEHICLE);
-    obj.setHelpText('Finish the course.');
+    obj.setHelpText('Beende den Kurs.');
     obj.setPosition(pos);
     obj.setBlip(1, 2, pos);
     obj.setMarker(

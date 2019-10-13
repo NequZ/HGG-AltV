@@ -91,7 +91,7 @@ function drawItems() {
             if (dist <= 1) {
                 native.beginTextCommandDisplayHelp('STRING');
                 native.addTextComponentSubstringPlayerName(
-                    `Press ~INPUT_CONTEXT~ to pickup (${itemData.item.name})`
+                    `Drücke ~INPUT_CONTEXT~ um das Item aufzuheben: (${itemData.item.name})`
                 );
                 native.endTextCommandDisplayHelp(0, false, true, -1);
 

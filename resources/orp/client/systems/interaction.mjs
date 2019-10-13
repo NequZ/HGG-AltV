@@ -36,7 +36,7 @@ function showKeyPress() {
     if (currentLabel === undefined) return;
 
     native.beginTextCommandDisplayHelp('STRING');
-    native.addTextComponentSubstringPlayerName(`Press ~INPUT_CONTEXT~ ${currentLabel}`);
+    native.addTextComponentSubstringPlayerName(`Drücke ~INPUT_CONTEXT~ ${currentLabel}`);
     native.endTextCommandDisplayHelp(0, false, true, -1);
 
     if (native.isControlJustPressed(0, 38)) {
