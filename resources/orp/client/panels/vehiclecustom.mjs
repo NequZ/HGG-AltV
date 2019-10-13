@@ -11,31 +11,31 @@ let colors = {};
 
 const modTypes = [
     'Spoiler', // 0
-    'Frontbumper', // 1
-    'Rearbumper', // 2
+    'Frontstoßstange', // 1
+    'Hintere Stoßstange', // 2
     'Sideskirt', // 3
-    'Exhaust', // 4
-    'Chassis', // 5
-    'Grille', // 6
-    'Hood', // 7
+    'Auspuff', // 4
+    'Chasiss', // 5
+    'Grill', // 6
+    'Motorhaube', // 7
     'Fender', // 8
     'Rightfender', // 9
-    'Roof', // 10
-    'Engine', // 11
-    'Brakes', // 12
-    'Transmission', // 13
-    'Horns', // 14
-    'Suspension', // 15
-    'Armor', // 16
+    'Dach', // 10
+    'Motor', // 11
+    'Bremsen', // 12
+    'Getriebe', // 13
+    'Hupe', // 14
+    'Tieferlegung', // 15
+    'Rüstung', // 16
     'Unk17', // 17
     'Turbo', // 18
     'Unk19', // 19
-    'Tiresmoke', // 20
+    'Reifensmoke', // 20
     'Unk21', // 21
-    'Xenonlights', // 22
-    'Frontwheels', // 23
-    'Backwheels', // 24
-    'Plateholder', // 25
+    'Xenonlichter', // 22
+    'Vorderreifen', // 23
+    'Hinterreifen', // 24
+    'Nummernschildhalter', // 25
     'Vanityplates', // 26
     'Trim', // 27
     'Ornaments', // 28
@@ -46,17 +46,17 @@ const modTypes = [
     'Steeringwheel', // 33
     'Shifterleavers', // 34
     'Plaques', // 35
-    'Speakers', // 36
-    'Trunk', // 37
-    'Hydrulics', // 38
-    'Engineblock', // 39
-    'Airfilter', // 40
+    'Lautsprecher', // 36
+    'Kofferraum', // 37
+    'Hydrulik', // 38
+    'Motorblock', // 39
+    'Luftfilter', // 40
     'Struts', // 41
     'Archcover', // 42
     'Aerials', // 43
     'Trim', // 44
     'Tank', // 45
-    'Windows', // 46
+    'Fenster', // 46
     'Unk47', // 47
     'Sticker' // 48 // Was "Livery"
 ];
