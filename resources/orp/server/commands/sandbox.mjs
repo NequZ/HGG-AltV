@@ -17,17 +17,15 @@ const sandboxhelp = [
     '/addwep (name)',
     '/face, /addxp, /setxp',
     '/tpto (rp-name)',
-    '/players, /clearchat',
     '/tpwp',
+    '/players, /clearchat',
     '/taxi, /mechanic',
     '/cancel',
     '/quitjob, /getsector',
     '/tryparticle',
     '/phonenumber',
     '/t, /call, /addcontact, /removecontact, /hangup',
-    '/d20 /flipcoin, /sf',
-    '/rmveh' ,
-    '/listVeh' 
+    '/d20 /flipcoin, /sf'
 ];
 
 chat.registerCmd('help', player => {
@@ -49,11 +47,11 @@ chat.registerCmd('addwep', (player, arg) => {
     }
 
     if (!addWeapon(player, arg[0])) {
-        player.send('Diese Waffe existiert nicht');
+        player.send('Weapon does not exist');
         return;
     }
 
-    player.send(`Die Waffe wurde deinem Inventar hinzugefügt.`);
+    player.send(`Weapon was added to your inventory.`);
 });
 
 chat.registerCmd('face', player => {
@@ -68,7 +66,7 @@ chat.registerCmd('additem', (player, arg) => {
 
     let itemTemplate = configurationItems.Items[`${arg[0]}`];
     if (!itemTemplate) {
-        player.send('Das Item existiert nicht');
+        player.send('Item does not exist');
         return;
     }
 
@@ -128,8 +126,6 @@ chat.registerCmd('tpto', (player, arg) => {
 chat.registerCmd('tpwp', player => {
     alt.emitClient(player, 'teleportToWaypoint');
 });
-
-
 
 chat.registerCmd('players', player => {
     alt.Player.all.forEach(t => {

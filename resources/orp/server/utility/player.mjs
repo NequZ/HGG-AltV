@@ -369,11 +369,7 @@ export function setupPlayerFunctions(player) {
     player.showAtmSuccess = msg => {
         alt.emitClient(player, 'atm:ShowSuccess', msg);
     };
-    // ====================================
-    // Show the Mobile Panel / Dialogue
-    player.showMobilePanel = () => {
-        alt.emitClient(player, 'mob:ShowDialogue');
-    };
+
     // =================================
     /**
      * Show the Clothing Dialogue
@@ -607,6 +603,25 @@ export function setupPlayerFunctions(player) {
             player.setSyncedMeta('prop:11', undefined);
             player.removeAllWeapons();
         }
+    };
+
+    player.searchItems = () => {
+        let hasDrugs = false;
+        let hasWeapons = false;
+
+        player.inventory.forEach(item => {
+            if (!item) return;
+            if (item.base === 'refineddrug') {
+                hasDrugs = true;
+                return;
+            }
+
+            if (item.base === 'weapon') {
+                hasWeapons = true;
+            }
+        });
+
+        return { hasDrugs, hasWeapons };
     };
 
     player.equipItem = (itemIndex, equipmentIndex) => {

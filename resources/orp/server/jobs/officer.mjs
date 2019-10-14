@@ -31,6 +31,10 @@ alt.on('job:Officer', player => {
     job.setItemRestrictions([{ key: 'driverslicense', hasItem: true }]);
     job.setLevelRestrictions([{ skill: 'nobility', xp: '13363' }]);
     job.setUniform('policeuniform');
+    job.setItems([
+        { key: 'weapon', quantity: 1, props: { hash: 911657153 }, name: 'StunGun' },
+        { key: 'cuffs', quantity: 1, props: {} }
+    ]);
 
     // Starting Point
     let obj = new Objective(objectives.POINT, modifiers.ON_FOOT);
@@ -69,7 +73,8 @@ alt.on('job:Officer', player => {
         0,
         100
     );
-    let index = Math.floor(Math.random() * (vehicles.length - 1));
+    let index = Math.floor(Math.random() * vehicles.length);
+    player.send(`Your Cruiser Model: ${vehicles[index]}`);
     obj.setVehicle(vehicles[index], pos, 180);
     job.add(copyObjective(obj));
 
