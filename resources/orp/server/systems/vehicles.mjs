@@ -126,11 +126,11 @@ export function toggleDoor(player, vehicle, id) {
         if (player.vehicles === undefined) return;
 
         if (!player.vehicles.includes(vehicle)) {
-            player.send('{FF0000} This vehicle does not belong to you.');
+            player.send('{FF0000} Dieses Fahrzeug gegört nicht dir.');
             return;
         }
 
-        player.send('{00FF00} Your vehicle was unlocked.');
+        player.send('{00FF00} Dein Fahrzeug ist aufgeschlossen.');
         vehicle.lockState = 1;
     }
 
@@ -140,7 +140,7 @@ export function toggleDoor(player, vehicle, id) {
 export function toggleLock(player, vehicle) {
     const dist = utilityVector.distance(player.pos, vehicle.pos);
     if (dist > 5) {
-        player.send(`{FF0000} You're too far away to toggle the lock.`);
+        player.send(`{FF0000} Du bist zu weit weg um dein Fahrzeug auf oder abzuschließen.`);
         return;
     }
 
@@ -150,14 +150,14 @@ export function toggleLock(player, vehicle) {
 
     if (vehicle.lockState === 2) {
         vehicle.lockState = 1; // Unlocked
-        player.send('Your vehicle is now unlocked.');
+        player.send('Dein Fahrzeug ist nun aufgeschlossen.');
 
         if (!player.vehicle) {
             alt.emitClient(null, 'vehicle:SoundHorn', vehicle, false);
         }
     } else {
         vehicle.lockState = 2; // Locked
-        player.send('Your vehicle is now locked.');
+        player.send('Dein Fahrzeug ist nun abgeschlossen.');
 
         if (!player.vehicle) {
             alt.emitClient(null, 'vehicle:SoundHorn', vehicle, true);
@@ -190,16 +190,16 @@ export function toggleSafetyLock(player, vehicle) {
 
     if (vehicle.lockState === 4) {
         vehicle.lockState = 2;
-        player.send('Safety Lock was turned off.');
+        player.send('Sicherheitsverschließung [AUS].');
     } else {
         vehicle.lockState = 4;
-        player.send('Safety Lock was turned on.');
+        player.send('Sicherheitsverschließung [AN].');
     }
 }
 
 export function saveChanges(player, vehicle, jsonData) {
     if (!player.vehicles || !player.vehicles.includes(vehicle)) {
-        player.send('This is not your vehicle; you cannot modify it.');
+        player.send('Das ist nicht dein Fahrzeug, du kannst es nicht modifizieren.');
         vehicle.syncCustom();
         return;
     }

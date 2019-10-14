@@ -14,7 +14,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            feedback: 'Welcome, deposit or withdraw.',
+            feedback: 'Willkommen.',
             cash: 0,
             bank: 0,
             ready: false,
@@ -57,14 +57,14 @@ class App extends Component {
 
         if (amount > 800000) {
             this.setState({
-                feedback: `Cannot move more than $800,000 at a time.`,
+                feedback: `Du kannst nicht mehr wie 800K auf einmal bewegen.`,
                 ready: false
             });
             return;
         }
 
         if (amount < 0) {
-            this.setState({ feedback: `${amount} must be positive.`, ready: false });
+            this.setState({ feedback: `${amount} muss positiv sein.`, ready: false });
             return;
         }
 
@@ -73,12 +73,12 @@ class App extends Component {
 
     deposit() {
         if (!this.state.ready) {
-            this.setState({ feedback: `Conditions for deposit not met.` });
+            this.setState({ feedback: `Bedingungen fürs Einzahlen nicht erfüllt.` });
             return;
         }
 
         if (this.state.cash < this.state.amount) {
-            this.setState({ feedback: `You don't have that much cash to deposit.` });
+            this.setState({ feedback: `Du hast nicht genug Geld zum einzahlen.` });
             return;
         }
 
@@ -90,12 +90,12 @@ class App extends Component {
 
     withdraw() {
         if (!this.state.ready) {
-            this.setState({ feedback: `Conditions for withdraw not met.` });
+            this.setState({ feedback: `Bedingungen fürs Auszahlen nicht erfüllt.` });
             return;
         }
 
         if (this.state.bank < this.state.amount) {
-            this.setState({ feedback: `You don't have that much cash to withdraw.` });
+            this.setState({ feedback: `Du hast nicht genug Geld zum auszahlen.` });
             return;
         }
 
@@ -127,7 +127,7 @@ class App extends Component {
                     h(
                         'div',
                         { class: 'center-p' },
-                        h('p', {}, `Cash: $${this.state.cash}`),
+                        h('p', {}, `Bargeld: $${this.state.cash}`),
                         h('p', {}, `Bank: $${this.state.bank}`)
                     )
                 ),
@@ -139,7 +139,7 @@ class App extends Component {
                         {
                             class: 'content'
                         },
-                        h('p', {}, 'Amount'),
+                        h('p', {}, 'Menge'),
                         h('input', {
                             type: 'number',
                             name: 'value',
@@ -157,8 +157,8 @@ class App extends Component {
                     h(
                         'div',
                         { class: 'center' },
-                        h('button', { onclick: this.withdraw.bind(this) }, 'Withdraw'),
-                        h('button', { onclick: this.deposit.bind(this) }, 'Deposit')
+                        h('button', { onclick: this.withdraw.bind(this) }, 'Auszahlen'),
+                        h('button', { onclick: this.deposit.bind(this) }, 'Einzahlen')
                     )
                 )
             )

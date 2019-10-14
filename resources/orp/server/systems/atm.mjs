@@ -8,14 +8,14 @@ export function withdraw(player, value) {
 
     if (!result) {
         // Add alert.
-        console.log(`${player.name} is trying to break the system.`);
+        console.log(`${player.name} versucht das System zu knacken.`);
         return;
     }
 
     player.addCash(value);
     player.updateAtmCash(player.getCash());
     player.updateAtmBank(player.getBank());
-    player.showAtmSuccess(`Successfully withdrew $${value}.`);
+    player.showAtmSuccess(`Erfolgreich Geld ausgezahlt $${value}.`);
 }
 
 // Called when the player wants to make a deposit to the ATM.
@@ -24,14 +24,14 @@ export function deposit(player, value) {
 
     if (!result) {
         // Add alert.
-        console.log(`${player.name} is trying to break the system.`);
+        console.log(`${player.name} versucht das System zu knacken.`);
         return;
     }
 
     player.addBank(value);
     player.updateAtmCash(player.getCash());
     player.updateAtmBank(player.getBank());
-    player.showAtmSuccess(`Successfully deposited $${value}.`);
+    player.showAtmSuccess(`Erfolgreich Geld eingezahlt: $${value}.`);
 }
 
 export function ready(player) {

@@ -49,19 +49,19 @@ function arrestAddons(player) {
     // Is arrestable based on animations.
     if (isArrestable) {
         options.push({
-            label: 'Cuff',
+            label: 'Fesseln',
             isServer: true,
             event: 'use:CuffPlayer'
         });
 
         options.push({
-            label: 'Free Cuff',
+            label: 'Freilassen',
             isServer: true,
             event: 'use:CuffPlayerFreely'
         });
 
         options.push({
-            label: 'Frisk',
+            label: 'Filzen',
             isServer: true,
             event: 'use:FriskPlayer'
         });
@@ -71,13 +71,13 @@ function arrestAddons(player) {
     if (arrester) {
         if (arrester.scriptID === alt.Player.local.scriptID) {
             options.push({
-                label: 'Uncuff',
+                label: 'Freilassen',
                 isServer: true,
                 event: 'use:UncuffPlayer'
             });
 
             options.push({
-                label: 'Frisk',
+                label: 'Filzen',
                 isServer: true,
                 event: 'use:FriskPlayer'
             });
@@ -87,13 +87,13 @@ function arrestAddons(player) {
     // Is Tazed by Not Arrested Yet
     if (isTazed && !arrester) {
         options.push({
-            label: 'Cuff',
+            label: 'Fesseln',
             isServer: true,
             event: 'use:CuffPlayer'
         });
 
         options.push({
-            label: 'Cuff Freely',
+            label: 'Freilassen',
             isServer: true,
             event: 'use:CuffPlayerFreely'
         });

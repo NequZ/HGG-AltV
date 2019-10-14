@@ -14,10 +14,10 @@ alt.on('menu:Player', ent => {
     if (alt.Player.local.getMeta('arrest')) {
         new ContextMenu(ent, [
             {
-                label: 'You'
+                label: 'Du'
             },
             {
-                label: 'Try Breaking Cuffs',
+                label: 'Versuche dich zu befreien',
                 isServer: true,
                 event: 'use:BreakCuffs'
             }
@@ -25,10 +25,10 @@ alt.on('menu:Player', ent => {
     } else {
         new ContextMenu(ent, [
             {
-                label: 'You'
+                label: 'Du'
             },
             {
-                label: 'Animations',
+                label: 'Animationen',
                 isServer: false,
                 event: 'submenu:PlayerAnimations'
             }
@@ -41,15 +41,15 @@ alt.on('menu:Player', ent => {
 alt.on('submenu:PlayerAnimations', ent => {
     new ContextMenu(ent, [
         {
-            label: 'Animation Types'
+            label: 'Animationen Typen'
         },
         {
-            label: 'Clear',
+            label: 'Animation beenden',
             isServer: false,
             event: 'animation:Clear'
         },
         {
-            label: 'Surrender',
+            label: 'Aufgeben',
             isServer: false,
             event: 'submenu:PlayerAnimSurrender'
         },
@@ -82,7 +82,7 @@ alt.on('submenu:PlayerAnimSurrender', ent => {
             label: 'Select'
         },
         {
-            label: 'Handsup',
+            label: 'Hände nach oben',
             isServer: false,
             event: 'animation:Play',
             data: {
@@ -93,7 +93,7 @@ alt.on('submenu:PlayerAnimSurrender', ent => {
             }
         },
         {
-            label: 'Kneel',
+            label: 'Kniehen',
             isServer: false,
             event: 'animation:Play',
             data: {
@@ -112,7 +112,7 @@ alt.on('submenu:Emote', ent => {
             label: 'Select'
         },
         {
-            label: 'Salute',
+            label: 'Salutieren',
             isServer: false,
             event: 'animation:Play',
             data: {
@@ -123,7 +123,7 @@ alt.on('submenu:Emote', ent => {
             }
         },
         {
-            label: 'The Finger',
+            label: 'Der Finger',
             isServer: false,
             event: 'animation:Play',
             data: {
