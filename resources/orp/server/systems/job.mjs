@@ -688,7 +688,7 @@ export class Job {
         }
 
         if (this.enabledTimer) {
-            player.send('Die Zeit läuft!');
+            player.notice('Die Zeit läuft!');
         }
     }
 
@@ -883,7 +883,9 @@ export class Job {
         if (this.enabledTimer) {
             let end = Date.now();
             let elapsed_time = parseFloat((end - this.start) / 1000).toFixed(1);
-            player.send(`Verbleibende Zeit: ${elapsed_time} Sekunden`);
+            player.notice(`Verbleibende Zeit: ${elapsed_time} Sekunden`);
+        } else {
+            player.notice('Job beendet');
         }
         quitJob(player);
     }
@@ -1089,6 +1091,7 @@ export function quitJob(player, loggingOut = false, playFailSound = false) {
     }
 
     player.setSyncedMeta('namecolor', null);
+    player.syncArrest();
     if (player.job) player.job = undefined;
     player.emitMeta('job:ClearObjective', true);
     player.setSyncedMeta('job:Props', undefined);

@@ -16,6 +16,7 @@ const vehiclePool = [
     'surge',
     'stratum',
     'primo',
+    'chino',
     'emperor',
     'asterope',
     'asea',

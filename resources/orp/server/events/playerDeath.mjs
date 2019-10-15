@@ -11,30 +11,20 @@ alt.on('playerDeath', (target, killer, weapon) => {
     // Anti Cheat Handling
     if (handleAntiCheat(target, killer, weapon)) return;
 
-    if (target && killer) {
-        const dist = distance(killer.pos, target.pos);
+   
+     // Job Handling
+     checkRestrictions(target);
 
-        if (dist <= 2) {
-            let isRanged = Object.keys(NonMeleeWeapons).find(x => {
-                if (NonMeleeWeapons[x] === weapon) return x;
-            });
-
-            if (isRanged !== undefined) {
-                console.log('Revived player from pistol whip.');
-                target.spawn(target.pos.x, target.pos.y, target.pos.z, 0);
-                return false;
-            }
-        }
-    }
 
     // Cuff Handling
     handleHasCuffed(target);
 
+     // IsCuffed
+     handleIsCuffed(target);
+
+
     // Hospital Handling
     handleHospital(target);
-
-    // Job Handling
-    checkRestrictions(target);
 
     // MDC Registration Handling
     handleMdcRegistration(target, killer);
@@ -62,14 +52,39 @@ function handleAntiCheat(target, killer, weapon) {
 
 /**
  * Checks if the player who died; has someone cuffed.
+ * If an officer or kidnapper dies; the cuffs are broken.
  * @param player
  */
 function handleHasCuffed(player) {
     if (player.cuffedPlayer) {
         player.cuffedPlayer.setSyncedMeta('arrested', undefined);
         player.cuffedPlayer.emitMeta('arrest', undefined);
+        player.cuffedPlayer = undefined;
     }
 }
+
+// This is called when a user is being
+// arrested and they die. They will be
+// sent straight to jail.
+function handleIsCuffed(player) {
+    const arrester = player.getSyncedMeta('arrested');
+    if (!arrester) return;
+    player.setSyncedMeta('arrested', undefined);
+    player.emitMeta('arrest', undefined);
+    arrester.cuffedPlayer = undefined;
+
+    if (!arrester.job) return;
+    if (!arrester.job.name.includes('Officer')) return;
+
+    player.lastLocation = {
+        x: 459.00830078125,
+        y: -998.204833984375,
+        z: 24.91485023498535
+    };
+    player.sendToJail = true;
+    player.setSyncedMeta('namecolor', '{ff8400}');
+}
+
 
 /**
  * Determines closest hospital; and sets up revive.
@@ -97,7 +112,7 @@ function handleHospital(player) {
 
     player.dropItemsOnDeath();
     player.hasDied = true;
-    player.revivePos = player.isArrested
+    player.revivePos = player.sendToJail
         ? { x: 459.00830078125, y: -998.204833984375, z: 24.91485023498535 }
         : closestHospital;
     player.saveDead(true);
@@ -116,9 +131,23 @@ function handleMdcRegistration(target, killer) {
         if (!owner) return;
         if (target === owner) return;
 
-        appendToMdc(target.data.name, owner.data.name, 'Vehicular Manslaughter');
+        appendToMdc(target, owner, 'Vehicular Manslaughter');
         return;
     }
 
-    appendToMdc(target.data.name, killer.data.name, 'Murder');
+
+
+    if (killer.job && killer.job.name.includes('Officer')) {
+        if (target.equipment && target.equipment[11]) {
+            if (target.equipment[11].base === 'weapon') {
+                return;
+            }
+
+            if (target.equipment[11].base === 'boundweapon') {
+                return;
+            }
+        }
+    }
+
+    appendToMdc(target, killer, 'Murder');
 }

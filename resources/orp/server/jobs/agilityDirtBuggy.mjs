@@ -9,7 +9,7 @@ import {
 } from '../systems/job.mjs';
 import { Interaction } from '../systems/interaction.mjs';
 
-const jobName = 'Agility Training';
+const jobName = 'Fähigkeitstraining';
 const trackStart = { x: -2194.39111328125, y: -419.4593505859375, z: 13.087158203125 };
 const trackPoints = [
     { x: -2231.485595703125, y: -388.1406555175781, z: 6.886474609375 },
@@ -53,7 +53,7 @@ let interaction = new Interaction(
     'job:DirtBuggy',
     3,
     3,
-    'to begin training agility.'
+    'um mit dem Training zu starten.'
 );
 interaction.addBlip(126, 6, jobName);
 
@@ -65,7 +65,7 @@ alt.on('job:DirtBuggy', player => {
     let obj = new Objective(objectives.POINT, modifiers.ON_FOOT);
     obj.setPosition(trackStart);
     obj.setRange(3);
-    obj.setHelpText('Pick up your dirtbuggy.');
+    obj.setHelpText('Schnapp dir deinen Buggy.');
     obj.setBlip(1, 1, trackStart);
     obj.setMarker(
         0,
@@ -84,7 +84,7 @@ alt.on('job:DirtBuggy', player => {
     // Setup the rest of the points.
     trackPoints.forEach(pos => {
         obj = new Objective(objectives.POINT, modifiers.IN_VEHICLE);
-        obj.setHelpText('Follow the course between the rocks.');
+        obj.setHelpText('Folge dem Kurs entlang den Bergen.');
         obj.setPosition(pos);
         obj.setBlip(1, 2, pos);
         obj.setMarker(
@@ -105,7 +105,7 @@ alt.on('job:DirtBuggy', player => {
 
     let pos = { x: -2222.756103515625, y: -427.21319580078125, z: 2.5391845703125 };
     obj = new Objective(objectives.POINT, modifiers.IN_VEHICLE);
-    obj.setHelpText('Finish the course.');
+    obj.setHelpText('Beende den Kurs.');
     obj.setPosition(pos);
     obj.setBlip(1, 2, pos);
     obj.setMarker(

@@ -9,7 +9,7 @@ import {
 } from '../systems/job.mjs';
 import { Interaction } from '../systems/interaction.mjs';
 
-const jobName = 'Agility Training';
+const jobName = 'Fähigkeitstraining';
 const trackStart = { x: -1186.2593994140625, y: 3856.404296875, z: 489.987548828125 };
 const trackPoints = [
     { x: -1171.4110107421875, y: 3846.936279296875, z: 487.308349609375 },
@@ -47,7 +47,7 @@ let interaction = new Interaction(
     'job:Dirtbike',
     3,
     3,
-    'to begin training agility.'
+    'um mit dem Training zu beginnen.'
 );
 interaction.addBlip(126, 6, jobName);
 
@@ -59,7 +59,7 @@ alt.on('job:Dirtbike', player => {
     let obj = new Objective(objectives.POINT, modifiers.ON_FOOT);
     obj.setPosition(trackStart);
     obj.setRange(3);
-    obj.setHelpText('Pick up your dirtbike.');
+    obj.setHelpText('Schnapp dir dein Dirtbike.');
     obj.setBlip(1, 1, trackStart);
     obj.setMarker(
         0,
@@ -78,7 +78,7 @@ alt.on('job:Dirtbike', player => {
     // Setup the rest of the points.
     trackPoints.forEach(pos => {
         obj = new Objective(objectives.POINT, modifiers.IN_VEHICLE);
-        obj.setHelpText('Follow the course down.');
+        obj.setHelpText('Folge dem Kurs.');
         obj.setPosition(pos);
         obj.setBlip(1, 2, pos);
         obj.setMarker(
@@ -99,7 +99,7 @@ alt.on('job:Dirtbike', player => {
 
     let pos = { x: -717.7846069335938, y: 2955.7978515625, z: 25.4381103515625 };
     obj = new Objective(objectives.POINT, modifiers.IN_VEHICLE);
-    obj.setHelpText('Finish the course.');
+    obj.setHelpText('Beende den Kurs.');
     obj.setPosition(pos);
     obj.setBlip(1, 2, pos);
     obj.setMarker(
