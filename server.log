@@ -1,1 +1,14 @@
-
+[20:05:56] alt:V Server, build #814, branch beta
+[20:05:56] Starting [GER] Highgroundgaming AltV [DevServer] on 0.0.0.0:7788
+[20:05:56] Loading resource orp
+[20:05:56] Loaded resource orp
+[20:05:56] Loading resource postgres-wrapper
+[20:05:57] Loaded resource postgres-wrapper
+[20:05:57] Loading resource speedo
+[20:05:57] Loaded resource speedo
+[20:05:57] Starting HTTP server on 0.0.0.0:7788
+[20:05:57] Server started
+[20:06:00] Loaded: events->playerEnteredVehicle.mjs	
+[20:06:04] Kuhva has connected.	
+[20:06:08][Error] Master server connect failed. UDP port 7788 is unreachable. Check you Firewall and NAT status
+[20:06:53] Kuhva is attempting a login with Kuhvaa.	

@@ -8,7 +8,7 @@ class App extends Component {
         this.state = {
             register: 0,
             fadeOut: 0,
-            feedback: 'Welcome Home',
+            feedback: 'Willkommen',
             username: '',
             password1: '',
             password2: '',
@@ -70,7 +70,7 @@ class App extends Component {
 
         if (this.state.username.length <= 5) {
             this.setState({
-                feedback: 'Username must be greater than 5 characters.',
+                feedback: 'Der Benutzername muss länger als 5 Zeichen sein',
                 valid: false
             });
 
@@ -79,14 +79,14 @@ class App extends Component {
 
         if (this.state.password1.length <= 5) {
             this.setState({
-                feedback: 'Password must be greater than 5 characters.',
+                feedback: 'Das Passwort muss länger als 5 Zeichen sein.',
                 valid: false
             });
             return;
         }
 
         if (this.state.register === 1 && this.state.password1 !== this.state.password2) {
-            this.setState({ feedback: 'Passwords do not match.', valid: false });
+            this.setState({ feedback: 'Die Passwörter stimmen nicht überein.', valid: false });
             return;
         }
 
@@ -96,7 +96,7 @@ class App extends Component {
             this.setState({ valid: false });
         }
 
-        this.setState({ feedback: 'Ready to go!' });
+        this.setState({ feedback: 'Alles bereit!' });
     }
 
     setRegister() {
@@ -104,7 +104,7 @@ class App extends Component {
 
         setTimeout(() => {
             this.setState({ register: 1, fadeOut: 0 });
-        }, 1000);
+        }, 125);
     }
 
     handleKeyPress = (event) => {
@@ -118,7 +118,7 @@ class App extends Component {
 
         setTimeout(() => {
             this.setState({ register: 0, fadeOut: 0 });
-        }, 1000);
+        }, 125);
     }
 
     submitData() {
@@ -139,172 +139,142 @@ class App extends Component {
     }
 
     render() {
-        return h(
-            'div',
+        return h('div',
             {
-                id: 'app',
-                class: this.state.isWaiting
-                    ? 'none animated fadeOut faster'
-                    : 'regular animated fadeIn faster'
+                class: this.state.isWaiting ? 'wrapper none animated fadeOut faster' : 'wrapper regular animated fadeIn faster'
             },
             h(
                 'div',
-                { class: 'container' },
-                h('div', { class: 'center' }, h('div', { class: 'logo' }, 'Open:RP'))
-            ),
-            h(
-                'div',
-                { class: 'animated flash container' },
-                h('p', { class: 'center', id: 'feedback' }, this.state.feedback)
-            ),
-            h(
-                'div',
-                {
-                    ref: this.wrapper,
-                    class: this.state.fadeOut
-                        ? 'animated fadeOut innerwrapper'
-                        : 'animated fadeIn innerwrapper'
-                },
-                // New Account?
-                this.state.register === 0 &&
-                    h(
-                        'div',
-                        { class: 'container' },
-                        h(
-                            'div',
-                            { class: 'right' },
-                            h(
-                                'button',
-                                { onclick: this.setRegister.bind(this) },
-                                'New Account >'
-                            )
-                        )
-                    ),
-                this.state.register === 1 &&
-                    h(
-                        'div',
-                        { class: 'container' },
-                        h(
-                            'div',
-                            { class: 'right' },
-                            h(
-                                'button',
-                                { onclick: this.setLogin.bind(this) },
-                                'Existing Account >'
-                            )
-                        )
-                    ),
-
-                // Login
+                { id: 'formContent' },
                 h(
-                    'div',
-                    { class: 'container' },
-                    h(
-                        'div',
-                        {
-                            class: 'content'
-                        },
-                        h('p', {}, 'Login'),
-                        h('input', {
-                            type: 'text',
-                            name: 'username',
-                            placeholder: 'username',
-                            autocomplete: 'off',
-                            oninput: this.validData.bind(this),
-                            id: 'username',
-                            ref: this.username,
-                            class: this.state.username.length >= 6 ? 'green' : 'red'
-                        })
-                    )
-                ),
-                // Password
-                h(
-                    'div',
-                    { class: 'container' },
-                    h(
-                        'div',
-                        {
-                            class: 'content'
-                        },
-                        h('p', {}, 'Pass'),
-                        h('input', {
-                            type: 'password',
-                            name: 'password',
-                            placeholder: 'password',
-                            oninput: this.validData.bind(this),
-                            onkeypress: this.handleKeyPress.bind(this),
-                            id: 'password1',
-                            class:
-                                (this.state.register &&
-                                    (this.state.password1.length >= 6 &&
-                                        this.state.password2.length >= 6 &&
-                                        this.state.password1 === this.state.password2)) ||
-                                (!this.state.register && this.state.password1.length >= 6)
-                                    ? 'green'
-                                    : 'red'
-                        })
-                    )
-                ),
-                this.state.register === 1
-                    ? h(
-                          'div',
-                          {
-                              class: 'container'
-                          },
-                          h(
-                              'div',
-                              { class: 'content' },
-                              h('p', {}, ''),
-                              h('input', {
-                                  type: 'password',
-                                  name: 'password',
-                                  placeholder: 'password confirmation',
-                                  oninput: this.validData.bind(this),
-                                  id: 'password2',
-                                  onkeypress: this.handleKeyPress.bind(this),
-                                  class:
-                                      this.state.register &&
-                                      (this.state.password1.length >= 6 &&
-                                          this.state.password2.length >= 6 &&
-                                          this.state.password1 === this.state.password2)
-                                          ? 'green'
-                                          : 'red'
-                              })
-                          )
-                      )
-                    : h('div', { class: 'container' }),
-                h(
-                    'div',
+                    'h2',
                     {
-                        class: 'container'
+                        onclick: this.setLogin.bind(this),
+                        class: this.state.register ? 'inactive underlineHover' : 'active'
+                    },
+                    'Anmelden'
+                ),
+                h(
+                    'h2',
+                    {
+                        onclick: this.setRegister.bind(this),
+                        class: this.state.register ? 'active' : 'inactive underlineHover'
+                    },
+                    'Registrieren'
+                ),
+                h(
+                    'div',
+                    {},
+                    h(
+                        'img',
+                        {
+                            src: 'logo.png',
+                            id: 'icon'
+                        }
+                    )
+                ),
+                h(
+                    'div',
+                    { class: 'animated flash container' },
+                    h('p', { class: 'center', id: 'feedback' }, this.state.feedback)
+                ),
+                h(
+                    'form',
+                    {
+                        ref: this.wrapper,
+                        class: this.state.fadeOut ? 'animated fadeOut innerwrapper' : 'animated fadeIn innerwrapper'
                     },
                     h(
                         'div',
-                        { class: 'center' },
+                        { class: 'container' },
                         h(
                             'div',
-                            { class: 'content' },
-                            h(
-                                'button',
-                                {
-                                    onclick: this.submitData.bind(this),
-                                    disabled: !this.state.valid,
-                                    class: this.state.valid ? 'green' : 'red'
-                                },
-                                'Submit'
-                            )
+                            {
+                                class: 'text-box'
+                            },
+                            h('input', {
+                                type: 'text',
+                                name: 'username',
+                                placeholder: 'Benutzername',
+                                autocomplete: 'off',
+                                oninput: this.validData.bind(this),
+                                id: 'username',
+                                ref: this.username,
+                                class: this.state.username.length >= 6 ? 'green' : 'red'
+                            })
+                        )
+                    ),
+                    h(
+                        'div',
+                        { class: 'container' },
+                        h(
+                            'div',
+                            {
+                                class: 'text-box'
+                            },
+                            h('input', {
+                                type: 'password',
+                                name: 'password',
+                                placeholder: 'Passwort',
+                                oninput: this.validData.bind(this),
+                                onkeypress: this.handleKeyPress.bind(this),
+                                id: 'password1',
+                                class:
+                                    (this.state.register &&
+                                        (this.state.password1.length >= 6 &&
+                                            this.state.password2.length >= 6 &&
+                                            this.state.password1 === this.state.password2)) ||
+                                    (!this.state.register && this.state.password1.length >= 6)
+                                        ? 'green'
+                                        : 'red'
+                            })
+                        )
+                    ),
+                    this.state.register === 1
+                        ? h(
+                        'div',
+                        {
+                            class: 'container'
+                        },
+                        h(
+                            'div',
+                            { class: 'text-box' },
+                            h('input', {
+                                type: 'password',
+                                name: 'password',
+                                placeholder: 'Passwort wiederholen',
+                                oninput: this.validData.bind(this),
+                                id: 'password2',
+                                onkeypress: this.handleKeyPress.bind(this),
+                                class:
+                                    this.state.register &&
+                                    (this.state.password1.length >= 6 &&
+                                        this.state.password2.length >= 6 &&
+                                        this.state.password1 === this.state.password2)
+                                        ? 'green'
+                                        : 'red'
+                            })
+                        )
+                        )
+                        : h('div', { class: 'container' }),
+                    h(
+                        'div',
+                        {
+                            class: 'container'
+                        },
+                        h(
+                            'button',
+                            {
+                                onclick: this.submitData.bind(this),
+                                disabled: !this.state.valid,
+                                class: 'submit'
+                            },
+                            this.state.register ? 'Registrieren' : 'Anmelden'
                         )
                     )
                 )
-            ),
-            h(
-                'div',
-                { class: 'footer' },
-                'https://www.twitch.tv/stuykgaming | https://github.com/team-stuyk-alt-v'
             )
         );
-
-        // Render HTML / Components and Shit Here
     }
 }
 

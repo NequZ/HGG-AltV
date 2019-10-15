@@ -3,3 +3,7 @@ server/configuration/database.mjs
 cache/*
 node_modules/*
 *.log
+resources/orp/.idea/*
+.idea/*
+cache/orp.resource
+server.log
