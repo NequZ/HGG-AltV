@@ -1,5 +1,5 @@
 terms-and-conditions.json
 server/configuration/database.mjs
-.log
-
-server.log
+cache/*
+node_modules/*
+*.log
